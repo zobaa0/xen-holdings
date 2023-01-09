@@ -1,0 +1,179 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+    <!-- TITLE -->
+    {% block title %}
+    {{ request.user.username|title }} | Transactions
+    {% endblock title %}
+
+    <!-- HEADING -->
+    {% block heading %}
+        TRANSACTIONS
+    {% endblock heading %}
+    
+    <!-- MAIN CONTENT -->
+    {% block content %}
+        <!-- TRANSACTIONS -->
+        <section class="summary px-lg-5 px-3 py-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>All 
+                        {% block transactions %}
+                            
+                        {% endblock transactions %}
+                    </p>
+                    <!-- Dark table with striped rows -->
+                    <div class="table-responsive">
+                        <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>View</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <!--  -->
+                                <tr>
+                                <td style="line-height: 1.3;">
+                                    Deposit <br>
+                                    <span style="font-size: 12px;"><em>pending</em></span>
+                                </td>
+                                <td style="padding-top: 20px;">USD 80.00</td>
+                                <td class="view" data-bs-toggle="modal" data-bs-target="#modalId">
+                                    View
+                                </td>
+                                </tr>
+                                <!--  -->
+                                <tr>
+                                <td style="line-height: 1.3;">
+                                    Deposit <br>
+                                    <span style="font-size: 12px;"><em>pending</em></span>
+                                </td>
+                                <td style="padding-top: 20px;">USD 80.00</td>
+                                <td class="view" data-bs-toggle="modal" data-bs-target="#modalId">
+                                    View
+                                </td>
+                                </tr>
+                                <!--  -->
+                                <tr>
+                                <td style="line-height: 1.3;">
+                                    Deposit <br>
+                                    <span style="font-size: 12px;"><em>pending</em></span>
+                                </td>
+                                <td style="padding-top: 20px;">USD 80.00</td>
+                                <td class="view" data-bs-toggle="modal" data-bs-target="#modalId">
+                                    View
+                                </td>
+                                </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Pagination: Basic example -->
+                <div class="d-flex justify-content-center pt-3">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a href="#" class="page-link">
+                                    <i class="bx bx-chevron-left ms-n1 me-1"></i>
+                                    Prev
+                                </a>
+                            </li>
+                            <li class="page-item disabled d-sm-none">
+                                <span class="page-link text-body">2 / 5</span>
+                            </li>
+                            <li class="page-item d-none d-sm-block">
+                                <a href="#" class="page-link">1</a>
+                            </li>
+                            <li class="page-item active d-none d-sm-block" aria-current="page">
+                                <span class="page-link">
+                                    2
+                                    <span class="visually-hidden">(current)</span>
+                                </span>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">
+                                    Next
+                                    <i class="bx bx-chevron-right me-n1 ms-1"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalId" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content" style="background: #141822;">
+                        <div class="modal-header">
+                            <p class="modal-title">
+                                <span style="color: rgb(39, 179, 252);">Deposit |</span> 
+                                <span>USD 100.00 </span> 
+                                <span style="color: rgb(10, 223, 165);">0.0051 BTC</span>
+                            </p>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body ">
+                            <div id="" class="mb-2 px-3 text-light" style="background: #30333c; border-radius: 10px;">
+                                <p class="py-2 mb-1">
+                                    Sender
+                                    <span style="float: right; color: rgb(39, 179, 252);">Admin</span> <hr>
+                                </p>
+                                <p class="mb-2">
+                                    Status
+                                    <span style="float: right; color: rgb(10, 223, 165);"><em>Pending</em></span> <hr>
+                                </p>
+                                <p class="mb-2">
+                                    Initiated on
+                                    <span style="float: right; color: rgb(39, 179, 252);">18 Oct 2022 10:05:40 pm</span> <hr>
+                                </p>
+                                <p class="py-2 mt-0 pt-0">
+                                    Verified on
+                                    <span style="float: right;color: rgb(39, 179, 252);">Not verified</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-footer modal-close">
+                            <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Go Back</button>
+                        </div>
+                      </div>
+                      <!-- #30333c -->
+                      <!-- #141822 -->
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .modal-close .btn-outline-primary {
+            border: 2px solid rgb(47, 100, 143) !important;
+            }
+            .modal-close .btn-outline-primary:hover,
+            .modal-close .btn-outline-primary:focus {
+                background: rgb(16, 61, 97) !important;
+                border: 2px solid rgb(16, 61, 97) !important;
+            }
+            .view {
+                /* position: absolute; */
+                border: 1px solid rgb(10, 223, 165);
+                padding: 2px 15px !important;
+                display: inline-block;
+                margin-top: 20px;
+                border-radius: 5px;
+                margin-left: 12px;
+                cursor: pointer;
+            }
+            .view:hover,
+            .view:focus {
+                background: rgb(10, 223, 165) !important;
+            }
+            .table-striped>tbody>tr:nth-of-type(odd)>* {
+                color: '';
+            }
+            .table-dark {
+                --si-table-striped-bg: #30333c;
+            }
+        </style>
+    {% endblock content %}
+        

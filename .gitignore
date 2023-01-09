@@ -1,0 +1,14 @@
+venv
+*.pyc
+*.pot
+*.log
+.ppk
+.pem
+Procfile
+runtime
+__pycache__
+.env
+db.sqlite3
+media/
+.vscode/
+# foodmenu_backup.sql

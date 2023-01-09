@@ -1,0 +1,131 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+<!-- TITLE -->
+{% block title %}
+{{ request.user.username|title }} | Deposit
+{% endblock title %}
+
+<!-- HEADING -->
+{% block heading %}
+DEPOSIT
+{% endblock heading %}
+
+<!-- MAIN CONTENT -->
+{% block content %}
+<section class="summary px-lg-5 px-3 py-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card bg-transparent">
+                <div class="card-body">
+                    <h3 class="text-center">Hi {% block name %} {% endblock %}!</h3>
+                    <p>
+                        You initiated a deposit request. Kindly make a deposit of
+                        <span style="color: rgb(39, 179, 252);"> <b>$</b><span style="color: rgb(39, 179, 252);" id="price">{% block amount %}{% endblock %}</span>
+                        </span> <span id="newPrice"></span> to the Company's Address below. Or, scan our QRcode.
+                    </p>
+                    <p></p>
+                    <div style="display: flex; justify-content: center;">
+                        <img src="{% block qrcode %}{% endblock %}" alt="qr_code" style="width: 300px; height: 250px;">
+                    </div>
+                    <br>
+                    <div style="display: flex;" class="dep-wal">
+                        <input type="text" id="wallet" class="form-control form-control-sm" value="{% block value %}{% endblock %}"
+                            readonly>
+                        <button class="btn-sm btn btn-primary" onclick="copySecret()">Copy Wallet Address</button>
+                    </div>
+                    <!-- <textarea name="" id="" cols="" class="w-100" rows=""></textarea> -->
+                    <small class="text-light">This address accepts only <b id="currency">{% block currency %}{% endblock %}</b></small>
+                    <p></p>
+                    <p>Your chosen plan is: <b>{% block plan %}{% endblock %}</b></p>
+                    <p>Your investment package will be automatically activated once your payment is verified on the BlockChain
+                        Network.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{% block style %}
+<style>
+    footer {
+        display: none;
+    }
+
+    .dep-wal input {
+        background: lightslategrey;
+        color: #fff !important;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        border: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .dep-wal input:focus {
+        background: lightslategrey;
+    }
+
+    .dep-wal .btn-primary {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+</style>
+{% endblock style %}
+
+
+{% block script %}
+<script>
+    function copySecret() {
+        // Get the text field
+        let copyText = document.getElementById('wallet');
+
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text inside the text field
+        document.execCommand('copy');
+
+        alert('Successfully copied Wallet Address!');
+    }
+
+
+    // 
+    url = 'https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=BTC,ETH,USDT'
+    fetch(url)
+    .then(response => response.json())
+
+    .then(data => {
+        // Select the price using querySelector
+        const usdPriceElement = document.querySelector('#price');
+        // Get the text content of the price
+        const usdPrice = usdPriceElement.textContent;
+        // Placeholder to hold the converted price
+        let price;
+        // Select the currency using querySelector
+        currency = document.querySelector('#currency');
+
+        if (currency.innerText === 'Bitcoin - BTC') {
+            const btcPrice = (usdPrice * data.BTC).toFixed(8);
+            price = `(BTC: ${btcPrice})`;
+
+        } else if (currency.innerText === 'Ethereum - ETH') {
+            const ethPrice = (usdPrice * data.ETH).toFixed(8);
+            price = `(ETH: ${ethPrice})`;
+
+        } else {
+            const usdtPrice = (usdPrice * data.USDT).toFixed(8);
+            price = `(USDT: ${usdtPrice})`;
+        }
+
+        const newPrice = document.querySelector('#newPrice');
+        newPrice.textContent = price
+    })
+    
+    .catch(error => {
+        console.log(error);
+    });
+</script>
+{% endblock script %}

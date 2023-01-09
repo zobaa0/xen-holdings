@@ -1,0 +1,198 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+        <!-- TITLE -->
+    {% block title %}
+        {{ request.user.username|title }} | Dashboard
+    {% endblock title %}
+            
+    <!-- HEADING -->
+    {% block heading %}
+        DASHBOARD
+    {% endblock heading %}
+     
+    <!-- MAIN CONTENT -->
+    {% block content %}
+        <!-- Summary -->
+        <section class="dashboard px-lg-5 px-3 py-3">
+            <div class="row">
+                <!-- LEFT COLUMN -->
+                <div class="col-xl-3 col-md-4">
+
+                    <!-- Registration Details -->
+                    <div class="col-12 mb-4">
+                        <div class="head d-flex justify-content-between">
+                            <div class="head-title">
+                                <p class="pt-3 mb-1" style="font-weight: 700;">Registration Date</p>
+                                <p style="color: rgb(39, 179, 252);">{{ request.user.date_joined|date:"F d, Y" }}</p>
+                            </div>
+                            <div class="mt-3" 
+                                style="height: 40px; width: 50px;">
+                                    <img src="{% static 'dashboard/img/icons/calendar.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Last Access -->
+                    <div class="col-12 mb-4">
+                        <div class="head d-flex justify-content-between">
+                            <div class="head-title">
+                                <p class="pt-3 mb-1" style="font-weight: 700;">Last Access</p>
+                                <p style="color: rgb(39, 179, 252);">{{ request.user.last_login|date:"F d, Y" }}</p>
+                            </div>
+                            <div class="mt-3" 
+                                style="height: 40px; width: 50px;">
+                                    <img src="{% static 'dashboard/img/icons/access.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- IP Details -->
+                    <div class="col-12 mb-4">
+                        <div class="head d-flex justify-content-between">
+                            <div class="head-title">
+                                <p class="pt-3 mb-1" style="font-weight: 700;">IP Address</p>
+                                <p style="color: rgb(39, 179, 252);">{{ request.META.REMOTE_ADDR }}</p>
+                            </div>
+                            <div class="mt-3" 
+                                style="height: 40px; width: 50px;">
+                                    <img src="{% static 'dashboard/img/icons/ip.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="col-xl-9 col-md-8">
+                    <div class="row">
+                        <!-- Account balance -->
+                        <div class="col-xl-6 col-md-12 pb-4">
+                            <div class="act-ctn">
+                                <div class="act-ctn-1 d-flex  py-3 pb-0">
+                                    <div class="mt-3 mb-4" 
+                                    style="height: 40px; width: 40px; margin-left: 30px;">
+                                        <img src="{% static 'dashboard/img/icons/account3.png' %}" alt="">
+                                    </div>
+                                    <div class="px-5 act-ctn-body">
+                                        <h6 class="pb-2">account balance</h6>
+                                        <p>${{ tot_bal|default:'0.00' }}</p>
+                                    </div>
+                                </div>
+                                <div class="act-ctn-2 py-3 text-center">
+                                    <a class="btn btn-sm btn-outline-primary" href="{% url 'dashboard:withdraw' %}" 
+                                    style="text-transform: uppercase;">request payment</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Earned total -->
+                        <div class="col-xl-6 col-md-12 pb-0 pb-md-4">
+                            <div class="act-ctn">
+                                <div class="act-ctn-1 d-flex  py-3 pb-0">
+                                    <div class="mt-3 mb-4" 
+                                    style="height: 40px; width: 40px; margin-left: 30px;">
+                                        <img src="{% static 'dashboard/img/icons/account1.png' %}" alt="">
+                                    </div>
+                                    <div class="px-5 act-ctn-body">
+                                        <h6 class="pb-2">earned total</h6>
+                                        <p>${{ tot_earned|default:'0.00' }}</p>
+                                    </div>
+                                </div>
+                                <div class="act-ctn-2 py-3 text-center">
+                                    <a class="btn btn-sm btn-outline-primary" href="{% url 'dashboard:invest' %}" 
+                                    style="text-transform: uppercase;">make a deposit</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Active deposit -->
+                        <div class="act-earned col-xl-6 col-md-12 pt-md-0 pt-4 pb-2 pb-xl-0">
+                            <div class="act-ctn mb-3">
+                                <div class="act-ctn-1 d-flex  py-3 pb-0">
+                                    <div class="mt-3 mb-4" 
+                                    style="height: 40px; width: 40px; margin-left: 30px;">
+                                        <img src="{% static 'dashboard/img/icons/account2.png' %}" alt="">
+                                    </div>
+                                    <div class="px-5 act-ctn-body">
+                                        <h6 class="pb-2">active deposit</h6>
+                                        <p>
+                                            ${{ active_deposit|default:'0.00' }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="act-ctn-2 ">
+                                    <ul class="list-unstyled px-3">
+                                        <li class="py-2">
+                                            Last Deposit:
+                                            <span style="float: right;">
+                                                ${{ last_deposit.sub_amount|default:'0.00' }}
+                                            </span>
+                                        </li>
+                                        <hr style="color: darkgrey;">
+                                        <li class="py-2">
+                                            Total Deposit:
+                                            <span style="float: right;">                               
+                                                ${{ tot_deposit|default:'0.00' }}
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Total withdrawal -->
+                        <div class="col-xl-6 col-md-12 pt-md-0 pt-2">
+                            <div class="act-ctn">
+                                <div class="act-ctn-1 d-flex  py-3 pb-0">
+                                    <div class="mt-3 mb-4" 
+                                    style="height: 40px; width: 40px; margin-left: 30px;">
+                                        <img src="{% static 'dashboard/img/icons/wallet.png' %}" alt="">
+                                    </div>
+                                    <div class="px-5 act-ctn-body">
+                                        <h6 class="pb-2">total withdrawal</h6>
+                                        <p>
+                                            ${{ tot_withdraw|default:'0.00' }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="act-ctn-2 ">
+                                    <ul class="list-unstyled px-3">
+                                        <li class="py-2">
+                                            Last Withdrawal:
+                                            <span style="float: right;">
+                                                ${{ last_withdraw.amount|default:'0.00' }}  
+                                            </span>
+                                        </li>
+                                        <hr style="color: darkgrey;">
+                                        <li class="py-2">
+                                            Pending Withdrawal:
+                                            <span style="float: right;">
+                                                ${{ pend_withdraw|default:'0.00' }}
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock content %}
+
+    {% block style %}
+        <style>
+            .head {
+                background: #30333c;
+                border-top: 6px solid rgb(47, 100, 143);
+                border-radius: 5px;
+                padding: 8px 10px;
+            }
+            
+            li {
+                color: #fff;
+            }
+            
+            @media (max-width: 767px) {
+                .act-earned {
+                    padding-bottom: 0 !important;
+                }
+            }
+            
+        </style>
+    {% endblock style %}

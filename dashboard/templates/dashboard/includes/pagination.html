@@ -1,0 +1,37 @@
+<div class="pagination">
+    <span class="step-links">
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}">
+                <span class="space-pre">Previous</span>
+            </a>
+        {% endif %}
+        <span class="current text-light">
+            Page {{ page.number }} of {{ page.paginator.num_pages }}.
+        </span>
+        {% if page.has_next %}
+            <a active href="?page={{ page.next_page_number }}"> 
+                <span class="space-nxt">Next</span>
+            </a>
+        {% endif %}
+    </span>
+</div>
+
+<style>
+    .pagination {
+        font-weight: bold;
+    }
+
+    a { 
+        text-decoration:none; 
+    }
+
+    .space-nxt {
+        color:#00abff;
+        padding-left: 8px;
+    }
+    
+    .space-pre {
+        color:#00abff;
+        padding-right: 8px;
+    }
+</style>

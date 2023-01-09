@@ -1,0 +1,136 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+    <!-- TITLE -->
+    {% block title %}
+    {{ request.user.username|title }} | Invest
+    {% endblock title %}
+
+    <!-- HEADING -->
+    {% block heading %}
+        INVEST
+    {% endblock heading %}
+    
+    <!-- MAIN CONTENT -->
+    {% block content %}
+        <section class="summary dashboard px-lg-5 px-3 py-3">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card bg-transparent">
+                        <div class="card-body">
+                            <form method="post">{% csrf_token %}
+                                <!-- Deposit Plan -->
+                                <div class="mb-3 wal" style="margin-top: 30px;">
+                                    {% if form.errors %}
+                                        <div class="alert alert-danger alert-dismissible fade show pb-0" role="alert">
+                                            <div id="form_errors" style="line-height: 1;">                                            
+                                                {% for key, value in form.errors.items  %}
+                                                <small>{{ value }}</small>
+                                                {% endfor %}                                                
+                                            </div>                                        
+                                            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    {% endif %}
+
+                                    <label for="wallet" class="form-label text-light">Select Plan *</label>
+                                    {{ form.plan }}
+                                </div>
+
+                                {% for i in plans %}
+                                    <!-- {{ i.plan_name|upper }} -->
+                                    <div id="{{ i.plan_name }}" class="plan-details mb-2 px-2 text-light" style="display: none;">
+                                        <h5 class="text-center" style="color: rgb(39, 179, 252) !important;">{{ i.plan_name|upper }}</h5>
+                                        <div class="mb-2 px-3" style="background: rgb(51, 50, 50); border-radius: 3px;">
+                                            <p class="py-2 mb-1">
+                                                Min Deposit
+                                                <span style="float: right; color: rgb(39, 179, 252);">USD {{ i.min }}</span>
+                                            </p>
+                                            <p class="mb-3">
+                                                Max Deposit
+                                                <span style="float: right; color: rgb(39, 179, 252);">USD {{ i.max }}</span>
+                                            </p>
+                                            <p class="mb-2">
+                                                Profit
+                                                <span style="float: right; color: rgb(39, 179, 252);">{{ i.percent }}%</span>
+                                            </p>    
+                                            <p class="mb-1">
+                                                Referral Bonus
+                                                <span style="float: right; color: rgb(39, 179, 252);">{{ i.ref_bonus }}%</span>
+                                            </p>
+                                            <p class="py-2 mb-1">
+                                                Duration
+                                                <span style="float: right; color: rgb(39, 179, 252);">{{ i.duration }} days</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+                                <!-- Deposit Payment Method -->
+                                <div class="mb-3 wal" style="margin-top: 30px;">
+                                    <label for="wallet" class="form-label text-light">Payment Method *</label>
+                                    {{ form.sub_method }}
+                                </div>
+                                <!-- Deposit Currency -->
+                                <div class="mb-3 wal" style="margin-top: 30px;">
+                                    <label for="wallet" class="form-label text-light">Preferred Currency *</label>
+                                    {{ form.sub_currency }}
+                                </div>
+                                <!-- Deposit Amount -->
+                                <div class="mb-3 form-group amt" style="">
+                                    <label for="amount" class="form-label text-light">Enter Price *</label>
+                                    {{ form.sub_amount }}
+                                </div>
+                                <!--  -->
+                                <div class="draw" style="margin-top: 30px;">
+                                    <button class="btn btn-sm btn-primary d-block" type="submit">Place Deposit</button>
+                                </div>                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock content %}
+    
+    {% block style %}
+    <style>
+        .alert {
+            border-radius: 12px !important;
+        }
+        small ul li {
+            list-style: square !important;
+            padding-bottom: 4px !important;
+        }
+        small ul {
+            padding-left: 10px !important;
+            padding-bottom: 10px !important;
+        }
+    </style>
+    {% endblock style %}
+        
+    {% block script %}
+        <script>
+            document.getElementById('plans').onchange = function() {
+                // Get the value of the selected option
+                let selectedOption = this.value;
+
+                // Get all the div elements that contain the
+                // details of the plans
+                let planDivs = document.querySelectorAll('.plan-details');
+
+                // Loop through the div elements and set
+                // their display to 'none'
+                for (let i = 0; i < planDivs.length; i++) {
+                    planDivs[i].style.display = 'none';
+                }
+
+                // Get the div element with the id matching
+                // the selected option 
+                let selectedDiv = document.getElementById(selectedOption);
+
+                // Set the display of the selected div to 'block'
+                selectedDiv.style.display = 'block';
+            };
+        </script>
+    {% endblock script %}
+        

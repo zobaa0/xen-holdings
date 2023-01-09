@@ -1,0 +1,257 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ siteName|default:'siteName'|upper }} Holdings | Financial Perspectives
+{% endblock title %}
+
+{% block site__head %}
+style='font-weight: bold; color: #5E0623; font-size: 20px;'
+{% endblock %}
+
+{% block header %}
+header__three
+{% endblock header %}
+
+{% block content %}
+<!-- ==========Page Header Section Starts Here========== -->
+<div class="pageheader" style="background: url({% static 'img/outlook/bg/pageheader.jpg' %});">
+    <div class="container">
+        <div class="pageheader__content">
+            <h2>Financial Perspectives</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'main:index' %}">Home | </a></li>
+                    <li class="px-2 active" aria-current="page" style="color: #5E0623;">Financial Perspectives</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- ==========Page Header Section Ends Here========== -->
+
+
+<!-- ==========Services Section Starts Here========== -->
+<div class="service service__single padding-tb">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center flex-row-reverse">
+                <div class="col-lg-8 col-12">
+                    <div class="mainarea">
+                        <div class="service__item">
+                            <div class="service__inner">
+                                <div class="service__thumb">
+                                    <img src="{% static 'img/perspectives/1a.jpg' %}" alt="" />
+                                </div>
+                                <div class="service__content">
+                                    <h4>{{ siteName|default:'siteName'|upper }} Financial Perspective</h4>
+                                    <p>
+                                        Your asset manager will first have to determine your circumstances and needs,
+                                        whether you contact us directly or through a qualified adviser. A crucial aspect
+                                        of this procedure is having direct communication with the person who will be in
+                                        charge of handling your financial affairs.
+                                        He or she needs to be aware of your general degree of wealth, way of life, time
+                                        frame, tax situation, and any liabilities you could have. You might want to
+                                        transfer a current portfolio from another investing firm or you might be a new
+                                        investor. Consolidating your investments, including ISAs, under a single
+                                        investment strategy may also be a good idea at this time.
+                                    </p>
+                                    <p>We will recommend an investment strategy that takes into account your specific
+                                        circumstances and goals once we have gained a thorough understanding of your
+                                        situation and your goals through our investment process. If you accept the plan,
+                                        we'll create your portfolio right away.</p>
+
+                                    <div class="row g-4">
+                                        <div class="col-sm-6 col-12">
+                                            <ul>
+                                                <li><i class="fa-solid fa-circle-check"></i>A single investment
+                                                    procedure was used to build a single investment team.</li>
+                                                <li><i class="fa-solid fa-circle-check"></i>We concentrate on long/short
+                                                    investment with a fundamental focus on capital preservation.</li>
+                                                <li><i class="fa-solid fa-circle-check"></i>Long-standing experience
+                                                    handling alternative and long-only strategies.</li>
+                                                <li><i class="fa-solid fa-circle-check"></i>Fully integrated processes
+                                                    that lead the industry.</li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6 col-12">
+                                            <img src="{% static 'img/perspectives/1a.jpg' %}" alt="" class="w-100">
+                                        </div>
+                                    </div>
+                                    <h4>Financial Circumstances</h4>
+                                    <p>
+                                        In order for us to completely grasp your financial status and expectations, your
+                                        investment manager will establish a close working connection with you or your
+                                        adviser. This relationship will begin with a thorough fact-finding process.
+                                        Industry-specific knowledge exchanged across platforms Our investing strategy's
+                                        foundation is our sector-focused approach.<br />
+                                        Our investment teams are primarily structured around sectors, which enables
+                                        investors across the firm who are focused on various products and strategies to
+                                        collaborate and establish strong relationships in our main areas. We gain unique
+                                        insight from the firm's shared ideas and intellectual capital, and we may use
+                                        this cross-platform leverage to match the correct financial solutions with
+                                        enticing possibilities.
+                                    </p>
+                                    <div class="feature feature__two py-4">
+                                        <div class="section__wrapper">
+                                            <div class="row g-4 justify-content-center">
+                                                <div class="col-xl-4 col-sm-6 col-12">
+                                                    <div class="feature__item">
+                                                        <div class="feature__inner">
+                                                            <div class="feature__thumb">
+                                                                <img src="{% static 'img/forecast/feature/icon/04.png' %}"
+                                                                    alt="feature icon" />
+                                                            </div>
+                                                            <div class="feature__content">
+                                                                <h5>Quality Focus</h5>
+                                                                <p>
+                                                                    We are methodical in acquiring top-notch assets and
+                                                                    companies that we think can offer reliable downside
+                                                                    protection throughout market cycles.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-6 col-12">
+                                                    <div class="feature__item">
+                                                        <div class="feature__inner">
+                                                            <div class="feature__thumb">
+                                                                <img src="{% static 'img/forecast/feature/icon/05.png' %}"
+                                                                    alt="feature icon" />
+                                                            </div>
+                                                            <div class="feature__content">
+                                                                <h5>Steady Approach</h5>
+                                                                <p>Although we deploy capital over the long haul, we are
+                                                                    prepared to act swiftly when the right opportunity
+                                                                    presents themselves.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-6 col-12">
+                                                    <div class="feature__item">
+                                                        <div class="feature__inner">
+                                                            <div class="feature__thumb">
+                                                                <img src="{% static 'img/forecast/feature/icon/06.png' %}"
+                                                                    alt="feature icon" />
+                                                            </div>
+                                                            <div class="feature__content">
+                                                                <h5>Contrarian Opinion</h5>
+                                                                <p>We acknowledge that creating desirable rates of
+                                                                    return frequently necessitates looking for assets,
+                                                                    companies, markets, and industries that are
+                                                                    unpopular or going through difficult times.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="service__thumb">
+                                        <img src="{% static 'img/perspectives/2a.jpg' %}" />
+                                    </div>
+                                    <br />
+                                    <h4>Managing your assets</h4>
+                                    <p>To ensure that your asset allocation remains suitable for the constantly shifting
+                                        circumstances in the global financial and economic markets, we will actively
+                                        manage it. In the event that your goals or personal situation change, your
+                                        investment manager will also be in charge of making the necessary adjustments.
+                                        One of the best ways to maintain and grow wealth over the long term is to use a
+                                        diversified investment strategy, also known as a "balanced portfolio" or
+                                        "multi-asset portfolio," that combines various assets. This strategy can expose
+                                        investors to a wide range of investment opportunities and limit losses during
+                                        difficult market conditions. Usually, the way various assets respond to changes
+                                        in the underlying economy and financial markets varies.</p>
+
+                                    <div class="service__thumb">
+                                        <img src="{% static 'img/perspectives/3a.jpg' %}" alt="" />
+                                    </div>
+                                    <br />
+                                    <h4>Value Based Investment</h4>
+                                    <p>For our investors, which include pension plans, inheritances, foundations,
+                                        sovereign funds, financial institutions, insurance companies, and the private
+                                        wealth channel, we strive to deliver enticing long-term returns and strong
+                                        downside protection.</p>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="sidebar">
+                        <div class="row g-4">
+                            <div class="col-lg-12 col-sm-6 col-12">
+                                <div class="sidebar__brochure">
+                                    <div class="head">
+                                        <h5>company Brochure</h5>
+                                    </div>
+                                    <div class="body">
+                                        <div class="thumb">
+                                            <img src="{% static 'img/forecast/perspectives/icon/03.png' %}" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <p>{{ siteName|default:'siteName'|upper }} holdings believes that good corporate governance is the foundation of
+                                                effective corporate management. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-sm-6 col-12">
+                                <div class="sidebar__helps">
+                                    <div class="head">
+                                        <h5>Need Help?</h5>
+                                    </div>
+                                    <div class="body">
+                                        <div class="thumb">
+                                            <img src="{% static 'img/forecast/perspectives/icon/04.png' %}" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <ul>
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="{% static 'img/forecast/service/icon/07.png' %}" alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <span>Monday - Friday</span>
+                                                        <p>09:00 AM - 05: 00 PM</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="{% static 'img/forecast/service/icon/08.png' %}" alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <span>Service Available</span>
+                                                        <p>{{ phone|default:'+1 302 389 5538'}}</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="{% static 'img/forecast/service/icon/09.png' %}" alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <span>1000 N West</span>
+                                                        <p>{{ address|default:'St Wilmington, DE 19801, USA' }}</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========Services Section Ends Here========== -->
+{% endblock content %}

@@ -1,0 +1,156 @@
+{% extends 'dashboard/settings.html' %}
+
+<!-- TITLE -->
+{% block title %}
+{{ request.user.username|title }} | wallet
+{% endblock title %}
+
+
+{% block profile %}
+    <!-- Account security -->
+    <div class="col-md-8 offset-lg-1 pb-5 mb-lg-2 mb-lg-4 mt-n3 mt-md-0">
+        <div class="ps-md-3 ps-lg-0 mt-md-2 pb-md-0">
+          <h1 class="h2 pt-xl-1 pb-3">Wallet</h1>
+          <!-- HANDLING ERRORS -->
+          {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible fade show pb-0" role="alert">
+                <div id="form_errors" style="line-height: 1;">                                            
+                    {% for key, value in form.errors.items  %}
+                      <small>{{ value }}</small>
+                    {% endfor %}                                                
+                </div>                                        
+                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+            <!-- WALLET -->
+            <p class="mb-2">Click on the box below to add a new withdrawal wallet address</p>
+            <div class="border-bottom pb-3 pb-lg-4">
+                <input class="form-control form-control-sm bg-transparent" 
+                style="border: 3px solid rgb(47, 100, 143) !important; cursor: pointer;"
+                data-bs-toggle="modal" data-bs-target="#modalId" disabled>
+            </div>
+            <!-- ADD WALLET MODAL -->
+            <div class="modal fade" id="modalId" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content" style="background: #141822;">
+                        <div class="modal-header">
+                            <p class="modal-title">
+                                <span>Add a new </span> 
+                                <span style="color: rgb(39, 179, 252);">Wallet</span>
+                            </p>
+                            <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body pb-3">
+                            <div id="" class="mb-2 pt-3 pb-5 px-3 text-light" style="background: #30333c; border-radius: 10px;">
+                                <form method="post">{% csrf_token %}
+                                        <div class="mb-3 wal" style="margin-top: 10px;">
+                                            <label for="w-network" class="form-label text-light"
+                                            style="color: rgb(39, 179, 252)!important;">Select Wallet *</label>
+                                            {{ form.type }}
+                                        </div>
+                                        <div class="mb-3 form-group amt" style="margin-top: 30px;">
+                                                <label for="w-address" class="form-label text-light"
+                                                style="color: rgb(39, 179, 252)!important;">Enter Your Wallet Address *</label>
+                                                {{ form.address }}
+                                        </div>
+                                        <div class="pb-2" style="margin-top: 20px;">
+                                            <button class="btn btn-sm btn-primary" type="submit" 
+                                            style="float: right; letter-spacing: 1.5px;" name="add">
+                                                ADD
+                                        </button>
+                                        </div>                
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer modal-close">
+                            <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Go Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Wallets -->
+            <h3 class="h5 text-primary pt-1 pt-lg-3 mt-4">Available Wallets</h3>
+            <div class="table-responsive">
+                <table class="table table-dark table-striped">
+                    <thead class="tot-head">
+                        <tr>
+                        <th>SN</th>
+                        <th>Type</th>
+                        <th>Address</th>
+                        <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--  -->
+                        {% for i in ref %}
+                            <tr class="tot-row">
+                                <td style="line-height: 1.3; padding-top: 1.6em; color: #fff;">{{ forloop.counter }}.</td>
+                                <td style="padding-top: 20px; color: #fff;">{{ i.get_type_display }}</td>
+                                <td style="padding-top: 20px; color: #fff;">{{ i.address }}</td>
+                                <td class="view" data-bs-toggle="modal" style="margin-right: 25px;" data-bs-target="#wallet{{ i.pk }}">
+                                    <a style="text-decoration: none;" href="#wallet{{ i.pk }}">
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            <!-- DELETE MODAL -->
+                            <div class="modal fade" id="wallet{{ i.pk }}" tabindex="-1" role="dialog" style="margin-top: 10em;">
+                                <div class="modal-dialog modal-sm" role="document">
+                                    <div class="modal-content" style="background: #141822;">
+                                        <div class="modal-body">
+                                            <h6>Confirm Delete</h6>
+                                            <p>Are you sure you want to delete 
+                                                <span style="color: rgb(10, 223, 165);">
+                                                    {{ i.type }} - {{ i.address|truncatechars:20 }}
+                                                </span> wallet?
+                                            </p>
+                                            <a href="{% url 'dashboard:del_wallet' i.pk %}" 
+                                            class="btn btn-primary btn-sm w-100" style="text-decoration: none;">
+                                                Confirm
+                                            </a>
+                                            <br>
+                                            <button type="button" class="btn btn-warning btn-sm w-100 mt-2" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <tr class="tot-row">
+                                <td>You haven't added a wallet address yet.</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="d-flex justify-content-center pt-3">
+                {% include 'dashboard/includes/pagination.html' with page=ref %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock profile %}
+
+{% block style %}
+    <style>
+        .alert {
+            border-radius: 12px !important;
+        }
+        small ul li {
+            list-style: square !important;
+            padding-bottom: 4px !important;
+        }
+        small ul {
+            padding-left: 10px !important;
+            padding-bottom: 10px !important;
+        }
+    </style>
+{% endblock style %}

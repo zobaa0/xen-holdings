@@ -1,0 +1,139 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ siteName|default:'siteName'|upper }} Holdings | Contact Us
+{% endblock title %}
+
+{% block header %}
+header__three
+{% endblock header %}
+
+{% block style__head %}
+<style>
+    .pageheader {
+        padding-block: 0 !important;
+        padding-bottom: 138px !important;
+    }
+    
+    .pageheader__content h2 {
+        padding-top: 138px !important;
+    }
+</style>
+{% endblock %}
+
+{% block site__head %}
+style='font-weight: bold; color: #5E0623; font-size: 20px;'
+{% endblock %}
+
+{% block content %}
+<!-- ==========Page Header Section Starts Here========== -->
+<div class="pageheader" style="background: url({% static 'img/outlook/bg/pageheader.jpg' %});">
+    <div>
+        {% include 'dashboard/includes/messaging.html' %}
+    </div>
+    <div class="container">
+        <div class="pageheader__content">
+            <h2>contact information</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'main:index' %}">Home | </a></li>
+                    <li class="px-2 active" aria-current="page" style="color: #5E0623;">Contact Us</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- ==========Page Header Section Ends Here========== -->
+
+
+
+<!-- ==========Contact Information Section Starts Here========== -->
+<div class="information padding-tb">
+    <div class="container">
+
+        <div class="section__wrapper">
+            <div class="row justify-content-center g-4">
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12">
+                    <div class="information__item">
+                        <div class="information__icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <div class="information__content">
+                            <h5>our Address</h5>
+                            <p>{{ address|default:'1000 NW St Wilmington, USA'}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12">
+                    <div class="information__item">
+                        <div class="information__icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="information__content">
+                            <h5>Email address</h5>
+                            <p>{{ email|default:'info@siteNameholdings.com'}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12">
+                    <div class="information__item">
+                        <div class="information__icon">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <div class="information__content">
+                            <h5>Phone numbers</h5>
+                            <p>
+                                {{ phone|default:'+1 302 389 5538' }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12">
+                    <div class="information__item">
+                        <div class="information__icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="information__content">
+                            <h5>office Hours</h5>
+                            <p>Mon - Fri : 9:00am - 5:00pm
+                                <br />
+                                Weekends : <span>Closed</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========Contact Information Section Ends Here========== -->
+
+
+
+
+<!-- ==========Contact Section Starts Here========== -->
+<div class="contact padding-tb bg-color">
+    <div class="container">
+        <div class="section__header text-center">
+            <h6>Have Any Question?</h6>
+            <h2>Have you any Question? Feel free to contact us.</h2>
+        </div>
+        <div class="section__wrapper">
+            <form method="post">
+                {% csrf_token %}
+                <div class="contact__form">
+                    <div>
+                        {{ form.name }}
+                        {{ form.email }}
+                        {{ form.subject }}
+                        {{ form.message }}
+                        <button type="submit" class="lab-btn">Send Massage</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- ==========Contact Section Ends Here========== -->
+{% endblock content %}

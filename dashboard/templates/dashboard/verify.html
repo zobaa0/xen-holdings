@@ -1,0 +1,77 @@
+{% extends 'dashboard/settings.html' %}
+
+{% load static %}
+
+<!-- TITLE -->
+{% block title %}
+{{ request.user.username|title }} | generate_otp
+{% endblock title %}
+
+{% block profile %}
+    <!-- Account details -->
+    <div class="col-md-8 offset-lg-1 pb-5 mb-2 mb-lg-4 pt-md-0 mt-n3 mt-md-0">
+        <div class="ps-md-3 ps-lg-0 mt-md-2 py-md-0">
+            <h1 class="h3 pt-xl-1 pb-1">Two-Factor Authentication (2FA)</h1>
+            <hr>
+            <p class="h6 text-primary mb-4 pt-2" style="color: rgb(39, 179, 252) !important;">
+                Configuring Google Authentication or Authy
+            </p>
+            <ol>
+                <li>
+                    Install Google Authenticator (IOS - Android) or Authy (IOS - Android).
+                </li>
+                <li>
+                    In the authenticator app, select '+' icon.
+                </li>
+                <li>
+                    Select "Scan a barcode (or QR code)" and use the phone's camera to scan this barcode.
+                </li>
+            </ol>
+            <p class="h6 text-primary mb-2" style="color: rgb(39, 179, 252) !important;">
+                Scan QR Code
+            </p>
+            <div style="display: flex !important; justify-content: center !important;">
+                <img src="{% static 'img/qrcode/2fa.png' %}" alt="qr_code" style="width: 250px; height: 250px;">
+            </div>
+            <p class="h6 text-primary mb-2 pt-4" style="color: rgb(39, 179, 252) !important;">
+                Or Enter Code Into Your App
+            </p>
+            <p>
+                Secret Key: {{ base32 }} (Base32 encoded)
+            </p>
+            <p class="h6 text-primary mb-2" style="color: rgb(39, 179, 252) !important;">
+                Verify Code
+            </p>
+            <p>
+                For changing the setting, please verify the authentication code:
+            </p>
+            <div class="row">
+                <div class="col-md-5">
+                    <form action="{% url 'account:verify_OTP' %}" method="post">
+                        {% csrf_token %}
+                        <div class="pb-3">
+                            <input type="text" class="form-control w-100 form-control-sm" 
+                            name="auth_code" placeholder="Authentication Code">
+                        </div>
+    
+                        <input type="submit" value="" class="d-none">
+                        <div class="d-flex mb-3 justify-content-between">
+                            <button type="reset" class="btn btn-sm btn-warning me-3">Cancel</button>
+                            <button type="submit" class="btn btn-sm btn-primary" name="form1">Activate</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        input:focus {
+            outline: 1px solid grey !important;
+        }
+
+        li {
+            color: #fff;
+        }
+    </style>
+{% endblock profile %} 

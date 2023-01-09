@@ -1,0 +1,91 @@
+{% extends 'dashboard/settings.html' %}
+
+<!-- TITLE -->
+{% block title %}
+        {{ request.user.username|title }} | Security
+{% endblock title %}
+
+
+{% block profile %}
+    <!-- Account security -->
+    <div class="col-md-8 offset-lg-1 pb-5 mb-lg-2 mb-lg-4 mt-n3 mt-md-0">
+        <div class="ps-md-3 ps-lg-0 mt-md-2 pb-md-0">
+          <h1 class="h2 pt-xl-1 pb-3">Security</h1>
+          {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible fade show pb-0" role="alert">
+                <div id="form_errors" style="line-height: 1;">                                            
+                    {% for key, value in form.errors.items  %}
+                      <small>{{ value }}</small>
+                    {% endfor %}                                                
+                </div>                                        
+                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endif %}
+          <!-- Password -->
+          <h2 class="h5 text-primary mb-4">Password</h2>
+          <form class="border-bottom pb-3 pb-lg-4" method="post">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-sm-6 mb-4">
+                <label for="cp" class="form-label fs-base">Current password</label>
+                <div class="password-toggle">
+                  {{ form.old_password }}                    
+                </div>
+              </div>
+            </div>
+            <div class="row pb-2">
+              <div class="col-sm-6 mb-4">
+                <label for="np" class="form-label fs-base">New password</label>
+                <div class="password-toggle">
+                  {{ form.new_password1 }}
+                </div>
+              </div>
+              <div class="col-sm-6 mb-4">
+                <label for="cnp" class="form-label fs-base">Confirm new password</label>
+                <div class="password-toggle">
+                  {{ form.new_password2 }}             
+                </div>
+              </div>
+            </div>
+            <input type="submit" value="", name="password_change" class="d-none">
+            <div class="d-flex mb-3">
+              <button type="reset" class="btn btn-warning me-3">Cancel</button>
+              <button type="submit" name="password_change" class="btn btn-primary">Save changes</button>
+            </div>
+          </form>
+
+          <!-- 2FA -->
+          <h2 class="h4 text-primary pt-1 pt-lg-3 mt-4">Mobile App Authentication (2FA)</h2>
+          <p>
+            Secure your account with TOTP two-factor authentication.
+          </p>
+          {% if request.user.otp_enabled %}
+              <a href="{% url 'account:disable_OTP' %}" class="btn btn-sm btn-primary">Disable OTP</a>
+          {% else %}
+            <form action="{% url 'account:generate_OTP' %}" method="post">
+              {% csrf_token %}
+              <button class="btn btn-sm btn-primary">Setup 2FA</button>
+            </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+{% endblock profile %}
+
+{% block style %}
+<style>
+  .alert {
+      border-radius: 12px !important;
+  }
+  small ul li {
+      list-style: square !important;
+      padding-bottom: 4px !important;
+  }
+  small ul {
+      padding-left: 10px !important;
+      padding-bottom: 10px !important;
+  }
+</style>
+{% endblock style %}
+  
+    

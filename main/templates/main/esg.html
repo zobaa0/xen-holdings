@@ -1,0 +1,1247 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ siteName|default:'siteName'|upper }} Holdings | ESG
+{% endblock title %}
+
+{% block site__head %}
+style='font-weight: bold; color: #5E0623; font-size: 20px;'
+{% endblock %}
+
+{% block header %}
+header__three
+{% endblock header %}
+
+{% block content %}
+<!-- ==========Page Header Section Starts Here========== -->
+<div class="pageheader" style="background: url({% static 'img/outlook/bg/pageheader.jpg' %});">
+    <div class="container">
+        <div class="pageheader__content">
+            <h2>ESG</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home | </a></li>
+                    <li class="px-2 active" aria-current="page" style="color: #5E0623;">Environmental Social Governance</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- ==========Page Header Section Ends Here========== -->
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about padding-tb">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 col-12">
+                <div class="about__content">
+                    <h6>Who we are</h6>
+                    <h2>We sustain the environment we operate in</h2>
+                    <p>
+                        Our corporate strategy policy is formed to ensure sustainable investments through beneficial
+                        engagement that safeguards the interests of the environment, the community, and the government.
+                    </p>
+                    <p>
+                        Since 2011, we have endorsed the UN's Principles for Responsible Investment (PRI), and for the
+                        past four years, we have been given an A+ in both the Direct Private Equity Module and the
+                        Strategy and Governance Module. The Sustainability Report, which has been released annually
+                        since 2012, highlights the extensive Environmental, Social, and Governance (ESG) initiatives
+                        carried out at the portfolio companies of {{ siteName|default:'siteName'|upper }} holdings and the {{ siteName|default:'siteName'|upper }} holdings Funds.
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about__thumb">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="thumb">
+                                <img src="{% static 'img/esg/1a.jpg' %}" class="w-100" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="thumb">
+                                <img src="{% static 'img/esg/1b.jpg' %}" alt="about" class="w-100" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="thumb thumb--content">
+                                <h4>Corporate
+                                    <br />
+                                    Ethics Program
+                                </h4>
+                                <img src="{% static 'img/about/icon/03.png' %}" alt="about icon" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+
+<!-- ==========specialtie Section Starts Here========== -->
+<div class="specialtie specialtie__two padding-tb">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                    <div class="specialtie__item">
+                        <div class="specialtie__inner">
+                            <div class="specialtie__thumb">
+                                <img src="{% static 'img/esg/2a.jpg' %}" alt="" class="w-100" />
+                            </div>
+                            <div class="specialtie__content">
+                                <h2>The {{ siteName|default:'siteName'|upper }} ESG Sustainability</h2>
+                                <p>Sustainability has been ingrained throughout the investment process at {{ siteName|default:'siteName'|upper }} Holdings
+                                    for well over a decade, and the company has an unwavering commitment to responsible
+                                    investment. This commitment was inspired by the conviction that a responsible
+                                    investment strategy can produce net benefits for society and the environment in
+                                    addition to maximising financial returns for investors.</p>
+                                <div class="row g-4 mt-4">
+                                    <div class="col-sm-6 col-12">
+                                        <div class="thumb">
+                                            <img src="{% static 'img/esg/2b.jpg' %}" alt="" />
+                                            <a href="https://www.youtube.com/embed/VgHtUY1Q4BE" data-rel="lightcase"
+                                                class="icon"><i class="fa-solid fa-play"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-12">
+                                        <div class="content">
+                                            <ul>
+                                                <li><i class="fa-solid fa-circle-check"></i>Environmental Highlights
+                                                </li>
+                                                <li><i class="fa-solid fa-circle-check"></i>Social Highlights</li>
+                                                <li><i class="fa-solid fa-circle-check"></i>Governance Highlights</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========specialtie Section Ends Here========== -->
+
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about padding-tb" style="padding-top: 50px; padding-bottom: 50px;">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 col-12">
+                <div class="about__content">
+                    <h6>Investment processes and strategies</h6>
+
+                    <p>
+                        By incorporating ESG factors broadly into all of our investment strategies and by providing
+                        dedicated equity and fixed income strategies that aim to achieve certain ESG-related outcomes,
+                        we reflect the aforementioned ESG beliefs.
+                    </p>
+                    <ul>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static 'img/about/icon/01.png' %}" alt="about icon" />
+                            </div>
+                            <div class="text">
+                                <h6>ESG Integration</h6>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static 'img/about/icon/02.png' %}" alt="about icon" />
+                            </div>
+                            <div class="text">
+                                <h6>Active Ownership</h6>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>A smarter economy, a healthier planet, diverse and inclusive communities, and a wider path to
+                        prosperity are all possible outcomes of the transformative power of technology, in our opinion.
+                    </p>
+                    <p>We run businesses and long-term assets all over the world. Our investment strategy and dedication
+                        to environmental, social, and governance (ESG) practices are both determined by this
+                        methodology. Value creation and sustainable development, in our opinion, are related objectives.
+                        We adhere to procedures that benefit the communities where we operate throughout all aspects of
+                        our operations.</p>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about__thumb">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="thumb">
+                                <img src="{% static 'img/esg/3a.jpg' %}" alt="about" class="w-100" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="thumb">
+                                <img src="{% static 'img/esg/3b.jpg' %}" alt="about" class="w-100" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="thumb thumb--content">
+                                <h4>Corporate
+                                    <br />
+                                    Financial
+
+                                    Advisor
+                                </h4>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+<!-- ==========Work Section Starts Here========== -->
+<div class="work bg-color padding-tb">
+    <div class="container">
+        <div class="section__header text-center">
+            <h6>How We Work</h6>
+            <h2>Steps For Successful Business</h2>
+        </div>
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div class="work__item">
+                        <div class="work__inner">
+                            <div class="work__thumb">
+                                <img src="{% static '/img/esg/work/icon/01.png' %}" alt="work icon" />
+                                <span>01</span>
+                            </div>
+                            <div class="work__content text-center">
+                                <h4>Environmental Highlights</h4>
+                                <p>The {{ siteName|default:'siteName'|upper }} holdings Buyout Funds' portfolio can be described as "asset light," and for
+                                    many businesses, electricity use is the most important environmental indicator.
+                                    Several of the portfolio companies' early adopters are creating comprehensive
+                                    climate strategies by committing to Science-based targets or setting Carbon Neutral
+                                    targets (such as Wehkamp and TietoEvry) (e.g. Thoughtworks). Additionally, a number
+                                    of initiatives are in progress to reduce complexity, waste, and the consumption of
+                                    natural resources, with a focus on waste reduction, reuse, and recycling in
+                                    particular.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div class="work__item">
+                        <div class="work__inner">
+                            <div class="work__thumb">
+                                <img src="{% static 'img/esg/work/icon/02.png' %}" alt="work icon" />
+                                <span>02</span>
+                            </div>
+                            <div class="work__content text-center">
+                                <h4>Social Highlights</h4>
+                                <p>Nearly 1,000+ people are employed by the portfolio companies of the {{ siteName|default:'siteName'|upper }} Holdings
+                                    Funds (both indirectly), and as a result, it is the portfolio companies' duty to
+                                    ensure that procedures and practices are in place throughout the portfolio to
+                                    support employee welfare. {{ siteName|default:'siteName'|upper }} Holdings can identify key best practices and areas
+                                    that need more attention by gathering a variety of indicators on the employee base
+                                    and its wellbeing. The profile of inclusion and diversity at the {{ siteName|default:'siteName'|upper }} holdings
+                                    portfolio companies is one of these subjects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div class="work__item">
+                        <div class="work__inner">
+                            <div class="work__thumb">
+                                <img src="{% static 'img/esg/work/icon/03.png' %}" alt="work icon" />
+                                <span>03</span>
+                            </div>
+                            <div class="work__content text-center">
+                                <h4>Governance Highlights</h4>
+                                <p>According to {{ siteName|default:'siteName'|upper }} Holdings, sound corporate management is built on good corporate
+                                    governance. Almost all businesses have a code of conduct or code of ethics that
+                                    serves as a guide for their operations. In the first year following an investment,
+                                    portfolio companies that are new or have historically placed less emphasis on
+                                    governance are actively encouraged to adopt the necessary codes and procedures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========Work Section Ends Here========== -->
+
+
+<!-- ==========Feature Section Starts Here========== -->
+<div class="feature feature__three feature__innerpage padding-tb">
+    <div class="container">
+        <div class="feature__area">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div class="feature__item">
+                        <div class="feature__inner">
+                            <div class="feature__thumb">
+                                <img src="{% static 'img/esg/feature/icon/08.png' %}" alt="feature icon" />
+                            </div>
+                            <div class="feature__content">
+                                <h4>Enviroment</h4>
+                                <p>The portfolio of Our Buyout Funds can be described as "asset light," and for many
+                                    businesses, electricity use is the most important environmental indicator.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div class="feature__item">
+                        <div class="feature__inner">
+                            <div class="feature__thumb">
+                                <img src="{% static 'img/esg/feature/icon/09.png' %}" alt="feature icon" />
+                            </div>
+                            <div class="feature__content">
+                                <h4>Social</h4>
+                                <p>To support the wellbeing of the workforce, procedures and practices have been put in
+                                    place across the portfolio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div class="feature__item">
+                        <div class="feature__inner">
+                            <div class="feature__thumb">
+                                <img src="{% static 'img/esg/feature/icon/10.png' %}" alt="feature icon" />
+                            </div>
+                            <div class="feature__content">
+                                <h4>Governance</h4>
+                                <p>Effective corporate management is built on good corporate governance and an ethics
+                                    code that governs our business activities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- ==========Feature Section Ends Here========== -->
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__one padding-tb bg-color">
+    <div class="container">
+        <div class="row g-5 flex-row-reverse align-items-end">
+            <div class="col-lg-6 col-12 ps-lg-4">
+                <div class="about__content">
+
+                    <h2>ESG Integration</h2>
+                    <p>
+                        ESG factors are incorporated into our investment processes for risk management purposes. Using
+                        the following investment principles—target drivers of return supported by solid research—we
+                        first design our portfolios.
+                        When appropriate, diversify among issuers, industries, and nations; take into account daily
+                        price information; and methodically implement portfolios by carefully balancing expected
+                        returns, expenses, and risks.
+                    </p>
+
+                    <p>Diversification is used in the approach described above to lower idiosyncratic risks, including
+                        risks related to ESG, but we also add a layer of ESG-specific risk management. For instance,
+                        because privately held businesses with significant strategic shareholders may not adequately
+                        represent the interests of all shareholders, we may choose to exclude them from our universe of
+                        eligible securities. We may also decide not to buy businesses where, based on available
+                        information, we think there is a higher risk of fraud or other actions that could render the
+                        financial statements of the business unreliable. Additionally, we monitor the news each day to
+                        find portfolio companies that are embroiled in disputes that could have a big effect on their
+                        bottom line, such as those involving social or environmental issues.</p>
+
+                    <p>These businesses might have their purchases temporarily stopped, or they might be referred to our
+                        Stewardship team for engagement. These additional procedures, in our opinion, add yet another
+                        component to risk management that takes ESG factors into account.</p>
+                    <div class="about__footer">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about__thumb">
+                    <div class="row g-4">
+                        <div class="thumb thumb--2 text-end">
+                            <img src="{% static 'img/esg/4a.jpg' %}" alt="About Image" />
+                            <div class="thumb--experience text-start">
+                                <img src="{% static 'img/about/icon/03.png' %}" alt="Icon" />
+                                <h5>We're ready to
+                                    <br />
+                                    assist you
+                                </h5>
+                            </div>
+                            <div class="floating-img">
+                                <img src="{% static 'img/esg/4a.jpg' %}" alt="About Image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__two padding-tb" style="padding-bottom:10px;">
+    <div class="container">
+        <div class="section__header text-center">
+            <h3>Active Ownership</h3>
+            <h6>Targeted ESG strategies</h6>
+        </div>
+        <div class="section__wrapper">
+            <div class="row g-5 flex-row-reverse">
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="thumb thumb--2">
+                                <img src="{% static 'img/esg/5a.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <div class="pie"
+                                        data-pie='{ "index": 1, "percent": 80, "colorSlice": "#021738", "colorCircle": "#fff", "fontWeight": 700, "stroke": 6, "size": 70,"fontSize": "1.5rem","fontColor":"#021738" }'>
+                                    </div>
+                                    <h5>A true global
+                                        <br />
+                                        Reach
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/esg/5b.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__content">
+                        <p>
+                            Once we buy a security, our job as a client's investment advisor is not yet achieved. We
+                            believe that better governance practices may lead to higher realized returns through higher
+                            future cash flows to shareholders or a lower discount rate used by the market, which is why
+                            our Investment Stewardship team promotes best-in-class governance practices, including
+                            oversight of material ESG-related risks. Engagement, proxy voting, and involvement in trade
+                            shows and organizations are all part of our stewardship efforts. For more details on our
+                            active ownership activities, please refer to our Investment Stewardship Statement and Annual
+                            Stewardship Report.
+                        </p>
+                        <p>
+                            We provide targeted sustainability and social strategies that incorporate ESG and also add
+                            more emphasis on ESG criteria by aiming for particular ESG outcomes. ESG factors are
+                            incorporated into these strategies' widely diversified, value-added systematic investment
+                            solutions through cutting-edge processes. Our track record managing sustainable and
+                            socially-screened strategies, which spans more than a decade since the launch of our first
+                            socially-screened strategy in 2009, serves as evidence of this.</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+<!-- ==========Services Section Starts Here========== -->
+<div class="service service__single padding-tb" style="padding-top:5px;padding-bottom:5px;">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center flex-row-reverse">
+                <div class="col-lg-12 col-12">
+                    <div class="mainarea">
+                        <div class="service__item">
+                            <div class="service__inner">
+
+                                <div class="service__content">
+                                    <h3>ESG Objectives</h3>
+                                    <h6>Environmental Objectives</h6>
+                                    <br />
+
+                                    <div class="row g-4">
+                                        <div class="col-sm-6 col-12">
+                                            <ul>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Increase the use of
+                                                        employee alternative transportation and decrease our scope 3
+                                                        emissions</b></li>
+                                                <li><i class="fa-solid fa-circle-check"></i>- Publicize links of local
+                                                    transit opportunities</li>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Reduce or eliminate the
+                                                        production of waste</b></li>
+                                                <li><i class="fa-solid fa-circle-check"></i>- Installing water
+                                                    dispensers and providing all employees with reusable water bottles
+                                                </li>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Reduce or eliminate the
+                                                        use of paper products</b> </li>
+                                                <li><i class="fa-solid fa-circle-check"></i>-Promoting recycling</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6 col-12">
+                                            <img src="{% static 'img/esg/6a.jpg' %}" alt="" class="w-100">
+                                        </div>
+                                    </div>
+                                    <h6>Social Objectives</h6>
+                                    <br />
+
+                                    <div class="row g-4 mb-4">
+                                        <div class="col-sm-6 col-12">
+                                            <img src="{% static 'img/esg/6b.jpg' %}" alt="" class="w-100">
+                                        </div>
+                                        <div class="col-sm-6 col-12">
+                                            <ul>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Encourage employee
+                                                        involvement and open communication through the deployment of our
+                                                        annual employee survey, regular trainings (including ESG
+                                                        topics), career development programs, and annual employee
+                                                        performance reviews</b></li>
+                                                <li><i class="fa-solid fa-circle-check"></i>- Facilitate better employee
+                                                    health and well-being through improved indoor air quality, adding
+                                                    handicap accessibility, and by promoting additional health and
+                                                    wellness strategies at our offices</li>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Foster community
+                                                        engagement at {{ siteName|default:'siteName'|upper }} through the development and support of
+                                                        charitable programs by:</b></li>
+                                                <li><i class="fa-solid fa-circle-check"></i>- Implementing casual dress
+                                                    Fridays for employees who donate $10 each</li>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Collaborate with our
+                                                        joint venture partners on implementing, tracking, and reporting
+                                                        our ESG initiatives</b> </li>
+                                                <li><i class="fa-solid fa-circle-check"></i>-Partnered with ThinkHR to
+                                                    conduct anti-harassment training for all employees</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <h6>Governance Objectives</h6>
+                                    <br />
+                                    <div class="row g-4">
+                                        <div class="col-sm-6 col-12">
+                                            <ul>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Regularly convene with
+                                                        our ESG Taskforce to discuss the goals, strategy, and management
+                                                        of our ESG Program</b></li>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Align our program with
+                                                        sustainability reporting frameworks such as GRESB to improve
+                                                        overall ESG performance and increase transparency</b></li>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Continue to participate
+                                                        in industry organizations and associations designed to
+                                                        facilitate communication, transparency, and the sharing of
+                                                        knowledge, consistent with ILPA reporting guidelines</b></li>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Distribute quarterly and
+                                                        annual reports to Limited Partners and include ESG updates</b>
+                                                </li>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Hold annual investor
+                                                        meetings for all active funds (including Advisory Board
+                                                        meetings) to ensure transparent communication</b></li>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Seek to use governance
+                                                        structures that provide appropriate levels of oversight in the
+                                                        areas of audit, risk management, and potential conflicts of
+                                                        interest</b></li>
+                                                <li><i class="fa-solid fa-circle-check"></i><b>Continue to exceed or
+                                                        comply with all national, state, and local labor laws and
+                                                        regulation standards</b></li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6 col-12">
+                                            <img src="{% static 'img/esg/6c.jpg' %}" alt="" class="w-100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========Services Section Ends Here========== -->
+
+<!-- ==========specialtie Section Starts Here========== -->
+<div class="specialtie specialtie__two padding-tb">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                    <div class="specialtie__item">
+                        <div class="specialtie__inner">
+                            <div class="specialtie__thumb">
+                                <img src="{% static 'img/esg/7a.jpg' %}" alt="" class="w-100" />
+                            </div>
+                            <div class="specialtie__content">
+                                <h2>Practice, Commitment & Policy</h2>
+                                <p>
+                                    To achieve an even better future, a smarter economy, a healthier planet, diverse and
+                                    inclusive communities, and a wider path to prosperity, we believe that technology's
+                                    transformative power is essential.
+                                    We are aware of the chance and duty we have to use our business and investment
+                                    choices to positively impact the world. Our commitment to generating value for all
+                                    of our stakeholders and upholding the highest standards of integrity over the course
+                                    of each investment is reflected in our environmental, social, and governance (ESG)
+                                    policy.
+                                    {{ siteName|default:'siteName'|upper }} is dedicated to managing ESG factors in our portfolio of private equity. Our ESG
+                                    policy is in line with the thorough Guidelines for Responsible Investing from the
+                                    American Investment Council.</p>
+                                <div class="row g-4 mt-4">
+                                    <div class="col-sm-6 col-12">
+                                        <div class="thumb">
+                                            <img src="{% static 'img/esg/7b.jpg' %}" alt="" />
+                                            <a href="https://www.youtube.com/embed/E1TnAi5usa0" data-rel="lightcase"
+                                                class="icon"><i class="fa-solid fa-play"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-12">
+                                        <div class="content">
+                                            <ul>
+                                                <li><i class="fa-solid fa-circle-check"></i>Wellness and Safety</li>
+                                                <li><i class="fa-solid fa-circle-check"></i>Inclusivity</li>
+                                                <li><i class="fa-solid fa-circle-check"></i>Trust and Responsibility
+                                                </li>
+                                                <li><i class="fa-solid fa-circle-check"></i>Privacy and Cybersecurity
+                                                </li>
+                                                <li><i class="fa-solid fa-circle-check"></i>Transparency</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========specialtie Section Ends Here========== -->
+
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__one padding-tb bg-color">
+    <div class="container">
+        <div class="row g-5 flex-row-reverse align-items-end">
+            <div class="col-lg-6 col-12 ps-lg-4">
+                <div class="about__content">
+
+                    <h2>Broad Accountability</h2>
+                    <p>
+                        At {{ siteName|default:'siteName'|upper }}, we foster ESG understanding and accountability throughout the firm. Our investment
+                        professionals are responsible for managing and instilling the guiding principles of our ESG
+                        policy across our portfolio companies. In addition, {{ siteName|default:'siteName'|upper }} Consulting Group (RCG) is actively
+                        involved in addressing potential ESG risks during the private equity investment process and
+                        within the {{ siteName|default:'siteName'|upper }} firm. Our Compliance team provides oversight and ensures that employees at {{ siteName|default:'siteName'|upper }}
+                        adhere to our ESG policy.</p>
+
+
+                    <div class="about__footer">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about__thumb">
+                    <div class="row g-4">
+                        <div class="thumb thumb--2 text-end">
+                            <img src="{% static 'img/esg/8a.jpg' %}" alt="About Image" />
+                            <div class="thumb--experience text-start">
+                                <img src="{% static 'img/about/icon/03.png' %}" alt="Icon" />
+                                <h5>We're ready to
+                                    <br />
+                                    assist you
+                                </h5>
+                            </div>
+                            <div class="floating-img">
+                                <img src="{% static 'img/esg/8b.jpg' %}" alt="About Image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__two padding-tb" style="padding-bottom: 10px;">
+    <div class="container">
+        <div class="section__header text-center">
+            <h3>Responsibility:</h3>
+            <h6>From Sourcing to Exit</h6>
+        </div>
+        <div class="section__wrapper">
+            <div class="row g-5 flex-row-reverse">
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="thumb thumb--2">
+                                <img src="{% static 'img/esg/9a.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <div class="pie"
+                                        data-pie='{ "index": 1, "percent": 80, "colorSlice": "#021738", "colorCircle": "#fff", "fontWeight": 700, "stroke": 6, "size": 70,"fontSize": "1.5rem","fontColor":"#021738" }'>
+                                    </div>
+                                    <h5>A true global
+                                        <br />
+                                        Reach
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/esg/9b.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__content">
+                        <p>
+                            In order to reduce stakeholder risks and position our portfolio companies for sustainable
+                            growth and success, we integrate ESG analysis into our private equity investment process.
+                            RCG subject matter experts thoroughly examine the company's technology, cybersecurity, and
+                            data privacy practices prior to every deal and add-on acquisition. In order to evaluate
+                            potential ESG risks and opportunities, we also work with law firms and consulting firms. The
+                            investment committee is informed of all important findings.
+
+                        </p>
+                        <p>
+                            {{ siteName|default:'siteName'|upper }} keeps track of ESG performance and development over the course of each private equity
+                            investment after a deal has closed. Through ongoing discussions and written check-ins with
+                            {{ siteName|default:'siteName'|upper }} portfolio company management and leadership, as well as board oversight during quarterly
+                            meetings, we make sure ESG measures are maintained.
+
+
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__one padding-tb bg-color">
+    <div class="container">
+        <div class="row g-5 flex-row-reverse align-items-end">
+            <div class="col-lg-6 col-12 ps-lg-4">
+                <div class="about__content">
+
+                    <h2>Principles for Responsible Investment</h2>
+                    <p>
+                        {{ siteName|default:'siteName'|upper }} is a signatory to the Principles for Responsible Investment (PRI), the largest reporting
+                        initiative on responsible investment in the world, which is supported by the UN. The PRI's
+                        blueprint for responsible investing prioritizes certain ESG issues through priority areas, from
+                        climate change to the obstacles to a more sustainable financial system, in order to foster
+                        inclusive and prosperous societies for future generations.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about__thumb">
+                    <div class="row g-4">
+                        <div class="thumb thumb--2 text-end">
+                            <img src="{% static 'img/esg/10a.jpg' %}" alt="About Image" />
+                            <div class="thumb--experience text-start">
+                                <img src="{% static 'img/about/icon/03.png' %}" alt="Icon" />
+                                <h5>We're ready to
+                                    <br />
+                                    assist you
+                                </h5>
+                            </div>
+                            <div class="floating-img">
+                                <img src="{% static 'img/esg/10b.jpg' %}" alt="About Image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__two padding-tb" style="padding-bottom: 10px;">
+    <div class="container">
+        <div class="section__header text-center">
+            <h3>Serving a Broader Purpose</h3>
+
+        </div>
+        <div class="section__wrapper">
+            <div class="row g-5 flex-row-reverse">
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="thumb thumb--2">
+                                <img src="{% static 'img/esg/11a.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <div class="pie"
+                                        data-pie='{ "index": 1, "percent": 80, "colorSlice": "#021738", "colorCircle": "#fff", "fontWeight": 700, "stroke": 6, "size": 70,"fontSize": "1.5rem","fontColor":"#021738" }'>
+                                    </div>
+                                    <h5>A true global
+                                        <br />
+                                        Reach
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/esg/11b.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__content">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <p>
+                            Our unrivaled expertise in the enterprise software market allows us to consistently fulfill
+                            our commitments to investors who have entrusted us with their futures by prioritizing ESG
+                            practices and policies.
+                        </p>
+                        <p>
+                            Our ESG principles are ingrained in every aspect of our operations and aid us in making sure
+                            that our marketing strategy will endure for a very long time.
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+<!-- ==========Misson Section Starts Here========== -->
+<div class="misson padding-tb">
+    <div class="container">
+        <div class="section__header text-center">
+
+            <h2>ESG Principles</h2>
+        </div>
+        <div class="section__wrapper">
+            <ul class="nav nav-tabs justify-content-center misson__tabul" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active lab-btn" id="tabOne" data-bs-toggle="tab"
+                        data-bs-target="#tabOne-pane" type="button" role="tab" aria-controls="tabOne-pane"
+                        aria-selected="true">Impact Mitigation</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link lab-btn" id="tabTwo" data-bs-toggle="tab" data-bs-target="#tabTwo-pane"
+                        type="button" role="tab" aria-controls="tabTwo-pane" aria-selected="false">safety of
+                        employees</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link lab-btn" id="tabThree" data-bs-toggle="tab" data-bs-target="#tabThree-pane"
+                        type="button" role="tab" aria-controls="tabThree-pane" aria-selected="false">strong governance
+                        practices</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link lab-btn" id="tabFour" data-bs-toggle="tab" data-bs-target="#tabFour-pane"
+                        type="button" role="tab" aria-controls="tabFour-pane" aria-selected="false">corporate
+                        citizens</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tabOne-pane" role="tabpanel" aria-labelledby="tabOne"
+                    tabindex="0">
+                    <div class="misson__item">
+                        <div class="misson__inner">
+                            <div class="misson__thumb">
+                                <img src="{% static 'img/esg/12a.jpg' %}" alt="" />
+                            </div>
+                            <div class="misson__content">
+                                <h4>Mitigate the impact of our operations on the environment:</h4>
+
+                                <ul>
+                                    <li><i class="fa-solid fa-circle-check"></i>Strive to minimize the environmental
+                                        impact of our operations and improve our efficient use of resources over time.
+                                    </li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Support the goal of net zero greenhouse
+                                        gas (GHG) emissions by 2050 or sooner.</li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabTwo-pane" role="tabpanel" aria-labelledby="tabTwo" tabindex="0">
+                    <div class="misson__item">
+                        <div class="misson__inner">
+                            <div class="misson__thumb">
+                                <img src="{% static 'img/esg/12b.jpg' %}" alt="" />
+                            </div>
+                            <div class="misson__content">
+                                <h4>Ensure the well-being and safety of employees:</h4>
+
+                                <ul>
+                                    <li><i class="fa-solid fa-circle-check"></i>Foster a positive work environment based
+                                        on respect for human rights, valuing diversity, and zero tolerance for workplace
+                                        discrimination, violence or harassment.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Operate with leading health and safety
+                                        practices to support the goal of zero serious safety incidents..</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabThree-pane" role="tabpanel" aria-labelledby="tabThree" tabindex="0">
+                    <div class="misson__item">
+                        <div class="misson__inner">
+                            <div class="misson__thumb">
+                                <img src="{% static 'img/esg/12c.jpg' %}" alt="" />
+                            </div>
+                            <div class="misson__content">
+                                <h4>Uphold strong governance practices:</h4>
+
+                                <ul>
+                                    <li><i class="fa-solid fa-circle-check"></i>Operate to the highest ethical standards
+                                        by conducting business activities in accordance with our Code of Business
+                                        Conduct and Ethics.
+                                    </li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Maintain strong stakeholder
+                                        relationships through transparency and active engagement.</li>
+
+                                </ul>
+                                <a href="{% url 'main:strategies' %}" class="lab-btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabFour-pane" role="tabpanel" aria-labelledby="tabFour" tabindex="0">
+                    <div class="misson__item">
+                        <div class="misson__inner">
+                            <div class="misson__thumb">
+                                <img src="{% static 'img/esg/12d.jpg' %}" alt="" />
+                            </div>
+                            <div class="misson__content">
+                                <h4>Be good corporate citizens:</h4>
+
+
+                                <ul>
+                                    <li><i class="fa-solid fa-circle-check"></i>Ensure the interests, safety and
+                                        well-being of the communities in which we operate are integrated into our
+                                        business decisions.
+                                    </li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Support philanthropy and volunteerism by
+                                        our employees.</li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========Misson Section Ends Here========== -->
+
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__one padding-tb bg-color">
+    <div class="container">
+        <div class="row g-5 flex-row-reverse align-items-end">
+            <div class="col-lg-6 col-12 ps-lg-4">
+                <div class="about__content">
+
+                    <h2>{{ siteName|default:'siteName'|upper }}'s Net Zero Commitment</h2>
+                    <p>
+                        By 2050, net zero emissions of greenhouse gases (or "GHGs") should be the objective.
+                    </p>
+                    <p>
+                        {{ siteName|default:'siteName'|upper }} has grown into one of the largest private renewable energy companies in the world over the
+                        last 13 years. With 20 GW of installed renewable generating capacity, we currently produce
+                        enough green energy to power London, and once our development pipeline is brought online, that
+                        amount will more than double.</p>
+                    <p>
+                        In order to quickly reduce the over 70% of global emissions that result from final energy
+                        consumption, additional renewable power capacity must be rapidly scaled up to replace fossil
+                        fuel generation and meet rising global electricity demand.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about__thumb">
+                    <div class="row g-4">
+                        <div class="thumb thumb--2 text-end">
+                            <img src="{% static 'img/esg/13a.jpg' %}" alt="About Image" />
+                            <div class="thumb--experience text-start">
+                                <img src="{% static 'img/about/icon/03.png' %}" alt="Icon" />
+                                <h5>We're ready to
+                                    <br />
+                                    assist you
+                                </h5>
+                            </div>
+                            <div class="floating-img">
+                                <img src="{% static 'img/esg/13b.jpg' %}" alt="About Image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+
+<!-- ==========specialtie Section Starts Here========== -->
+<div class="specialtie specialtie__two padding-tb">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                    <div class="specialtie__item">
+                        <div class="specialtie__inner">
+                            <div class="specialtie__thumb">
+                                <img src="{% static 'img/esg/14a.jpg' %}" alt="" class="w-100" />
+                            </div>
+                            <div class="specialtie__content">
+                                <h2>Integrating ESG considerations into our investment process</h2>
+                                <p>
+                                    Our PRI commitments call for us to take ESG considerations into account when making
+                                    investment decisions, from the due diligence stage of potential investments to the
+                                    exit procedure. For important ESG considerations, we develop post-investment
+                                    remediation plans and customize our ESG due diligence for each investment. We
+                                    identify important ESG factors for all potential investments using internal experts
+                                    and a range of ESG frameworks, and when necessary, we bring in outside consultants.
+                                    This analysis covers all aspects of our portfolio, from ensuring environmental,
+                                    legal, and regulatory compliance to identifying opportunities to add value or reduce
+                                    risk. To ensure that significant ESG risks and opportunities are taken into account,
+                                    our investment teams follow an ESG due diligence procedure.
+
+                                </p>
+                                <div class="row g-4 mt-4">
+                                    <div class="col-sm-6 col-12">
+                                        <div class="thumb">
+                                            <img src="{% static 'img/esg/14b.jpg' %}" alt="" />
+                                            <a href="https://www.youtube.com/embed/E1TnAi5usa0" data-rel="lightcase"
+                                                class="icon"><i class="fa-solid fa-play"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-12">
+                                        <div class="content">
+                                            <p>
+                                                These teams then give the Investment Committee a thorough memo outlining
+                                                the merits of the transaction, risk disclosures, including significant
+                                                ESG issues, and potential mitigation strategies.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========specialtie Section Ends Here========== -->
+
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__two padding-tb" style="padding-bottom: 10px;">
+    <div class="container">
+        <div class="section__header text-center">
+            <h3>A strong governance framework</h3>
+
+        </div>
+        <div class="section__wrapper">
+            <div class="row g-5 flex-row-reverse">
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="thumb thumb--2">
+                                <img src="{% static 'img/esg/15a.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <div class="pie"
+                                        data-pie='{ "index": 1, "percent": 80, "colorSlice": "#021738", "colorCircle": "#fff", "fontWeight": 700, "stroke": 6, "size": 70,"fontSize": "1.5rem","fontColor":"#021738" }'>
+                                    </div>
+                                    <h5>A true global
+                                        <br />
+                                        Reach
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/esg/15b.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__content">
+                        <br />
+                        <br />
+                        <br />
+                        <p>
+                            In order to maintain investor confidence, we are constantly striving to uphold sound
+                            governance practices. This necessitates a continuous evaluation of how our strategy should
+                            account for changing laws, regulations, and best practices. For instance, we have a
+                            zero-tolerance policy for bribery, including the payment of facilitation fees, and all {{ siteName|default:'siteName'|upper }}
+                            staff members are required to attend an annual comprehensive anti-bribery and corruption
+                            (ABC) training seminar. To report suspected unethical, illegal, or unsafe behavior, {{ siteName|default:'siteName'|upper }}
+                            keeps an ethics hotline open. </p>
+                        <p>
+                            This link will take you to the reporting website. Our reporting hotline is staffed
+                            round-the-clock, every day of the week by an impartial third party.
+                        </p>
+                        <p>
+                            Our ABC policy, which mandates that portfolio companies set up an ethics hotline within six
+                            months of acquisition, is also mandatory for all portfolio companies in which we hold a
+                            controlling interest.
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+
+<!-- ==========Misson Section Starts Here========== -->
+<div class="misson padding-tb">
+    <div class="container">
+        <div class="section__header text-center">
+
+            <h2>ESG FRAMEWORKS AND MEMBERSHIPS</h2>
+        </div>
+        <div class="section__wrapper">
+            <ul class="nav nav-tabs justify-content-center misson__tabul" id="myTab1" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active lab-btn" id="tabOne1" data-bs-toggle="tab"
+                        data-bs-target="#tabOne-pane1" type="button" role="tab" aria-controls="tabOne-pane"
+                        aria-selected="true">(PRI)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link lab-btn" id="tabTwo1" data-bs-toggle="tab" data-bs-target="#tabTwo-pane1"
+                        type="button" role="tab" aria-controls="tabTwo-pane1" aria-selected="false">(SASB)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link lab-btn" id="tabThree1" data-bs-toggle="tab"
+                        data-bs-target="#tabThree-pane1" type="button" role="tab" aria-controls="tabThree-pane1"
+                        aria-selected="false">(A4S)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link lab-btn" id="tabFour1" data-bs-toggle="tab" data-bs-target="#tabFour-pane1"
+                        type="button" role="tab" aria-controls="tabFour-pane1" aria-selected="false">BSR</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent1">
+                <div class="tab-pane fade show active" id="tabOne-pane1" role="tabpanel" aria-labelledby="tabOne1"
+                    tabindex="0">
+                    <div class="misson__item">
+                        <div class="misson__inner">
+                            <div class="misson__thumb">
+                                <img src="{% static 'img/esg/16a.jpg' %}" alt="" />
+                            </div>
+                            <div class="misson__content">
+                                <h4>Principles for Responsible Investment (PRI)</h4>
+
+                                <p>{{ siteName|default:'siteName'|upper }} has formally pledged its continued commitment to ethical investing and the
+                                    highest standards of environmental, social, and governance (ESG) by becoming a
+                                    signatory to the Principles for Responsible Investment (PRI).</p>
+                                <p> The PRI is one of the foremost advocates of responsible investing in the world. It
+                                    places a strong emphasis on recognizing the financial implications of ESG factors
+                                    and assisting a global network of investor signatories in incorporating these
+                                    considerations into their ownership and investment decisions.</p>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabTwo-pane1" role="tabpanel" aria-labelledby="tabTwo1" tabindex="0">
+                    <div class="misson__item">
+                        <div class="misson__inner">
+                            <div class="misson__thumb">
+                                <img src="{% static 'img/esg/16b.jpg' %}" alt="" />
+                            </div>
+                            <div class="misson__content">
+                                <h4>Sustainability Accounting Standards Board (SASB)</h4>
+
+                                <p>Businesses and investors can connect regarding the financial effects of
+                                    sustainability through the Sustainability Accounting Standards Board (SASB).
+                                    Businesses can identify, manage, and share financially significant sustainability
+                                    information with investors thanks to SASB Standards. </p>
+                                <p>Industry-specific SASB Standards are made to help investors make decisions.<br />
+                                    They are created using an evidence-based and market-driven </p>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabThree-pane1" role="tabpanel" aria-labelledby="tabThree1" tabindex="0">
+                    <div class="misson__item">
+                        <div class="misson__inner">
+                            <div class="misson__thumb">
+                                <img src="{% static 'img/esg/16c.jpg' %}" alt="" />
+                            </div>
+                            <div class="misson__content">
+                                <h4>Prince’s Accounting for Sustainability Project (A4S)</h4>
+                                <p>HRH established The Prince's Accounting for Sustainability Project (A4S). The Prince
+                                    of Wales in 2004 to encourage the financial and accounting community to take
+                                    initiative and lead in addressing the challenges to the economy and society posed by
+                                    problems like urbanization, inequality, and climate change.</p>
+                                <p> A4S aims to motivate financial leaders to take decisive action to promote resilient
+                                    business models and a sustainable economy.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tabFour-pane1" role="tabpanel" aria-labelledby="tabFour1" tabindex="0">
+                    <div class="misson__item">
+                        <div class="misson__inner">
+                            <div class="misson__thumb">
+                                <img src="{% static 'img/esg/16d.jpg' %}" alt="" />
+                            </div>
+                            <div class="misson__content">
+                                <h4>BSR</h4>
+                                <p>BSR, a multinational nonprofit, collaborates with more than 250 member companies in
+                                    its network and other partners to create a just and sustainable world. The nonprofit
+                                    creates sustainable business strategies and solutions through consulting, research,
+                                    and cross-sector cooperation from offices in Asia, Europe, and North America.</p>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========Misson Section Ends Here========== -->
+{% endblock content %}

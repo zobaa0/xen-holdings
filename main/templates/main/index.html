@@ -1,0 +1,976 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ siteName|default:'siteName'|upper }} Holdings | Home
+{% endblock title %}
+
+{% block content %}
+    <!-- ==========Banner Section Starts Here========== -->
+    <div class="banner__slider__one overflow-hidden">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="banner bg-img" style="background-image: url({% static 'img/homepage/sl1.jpg' %});">
+                    <div class="banner__one">
+                        <div class="container">
+                            <div class="banner__area">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-9 col-12">
+                                        <div class="banner__content">
+                                            <h6>Financial Advisors</h6>
+                                            <h2>We manage your assets and Investments</h2>
+                                            <div class="banner__btngroup">
+                                                <a href="#" class="lab-btn">View all services</a>
+                                                <a href="https://www.youtube.com/embed/hx2KdMuPUt8"
+                                                    data-rel="lightcase" class="video__btn">
+                                                    <i class="fa-solid fa-circle-play"></i>
+                                                    <span>Who we are</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="banner bg-img" style="background-image: url({% static 'img/homepage/sl2.jpg' %});">
+                    <div class="banner__one">
+                        <div class="container">
+                            <div class="banner__area">
+                                <div class="row justify-content-center">
+                                    <div class="col-xl-6 col-lg-9 col-12">
+                                        <div class="banner__content text-center">
+                                            <h6>Partnership</h6>
+                                            <h2>Building the right network of trusted partners</h2>
+                                            <div class="banner__btngroup justify-content-center">
+                                                <a href="#" class="lab-btn">View all services</a>
+                                                <a href="https://www.youtube.com/embed/HHqburX5Z_s"
+                                                    data-rel="lightcase" class="video__btn">
+                                                    <i class="fa-solid fa-circle-play"></i>
+                                                    <span>How we work</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========Banner Section Ends Here========== -->
+
+
+
+    <!-- ==========Feature Section Starts Here========== -->
+    <div class="feature padding-tb">
+        <div class="container">
+            <div class="feature__area">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="feature__item">
+                            <div class="feature__inner">
+                                <div class="feature__thumb">
+                                    <img src="{% static 'img/feature/icon/01.png' %}" alt="feature icon" />
+                                    <span>01</span>
+                                </div>
+                                <div class="feature__content">
+                                    <h4>Partnerships</h4>
+                                    <p>Building the right network of trusted partners to enhance value.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="feature__item">
+                            <div class="feature__inner">
+                                <div class="feature__thumb">
+                                    <img src="{% static 'img/feature/icon/02.png' %}" alt="feature icon" />
+                                    <span>02</span>
+                                </div>
+                                <div class="feature__content">
+                                    <h4>Sustainability</h4>
+                                    <p>Driving investments with innovation that guarantees continuity..</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="feature__item">
+                            <div class="feature__inner">
+                                <div class="feature__thumb">
+                                    <img src="{% static 'img/feature/icon/03.png' %}" alt="feature icon" />
+                                    <span>03</span>
+                                </div>
+                                <div class="feature__content">
+                                    <h4>ESG</h4>
+                                    <p>Delivering a modern structure for responsible leadership at scale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5 infotext">
+                    <p>Successful commercial investing depends on thorough analysis, not whimsical prediction. <a
+                            href="{% url 'account:login' %}">Go ahead, get started!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========Feature Section Ends Here========== -->
+
+
+
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about padding-tb" style="padding-top: 50px; padding-bottom: 50px;">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 col-12">
+                    <div class="about__content">
+                        <h6>Who we are</h6>
+
+                        <p>
+                            We help our clients achieve their most ambitious goals by putting the strategies of the
+                            most prosperous people, families, and institutions in the world into action through our
+                            knowledge and dedication.
+                        </p>
+                        <ul>
+                            <li>
+                                <div class="icon ">
+                                    <img src="{% static 'img/about/icon/01.png' %}" alt="about icon" />
+                                </div>
+                                <div class="text">
+                                    <h6>Partnerships and Sustainability</h6>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <img src="{% static 'img/about/icon/02.png' %}" alt="about icon" />
+                                </div>
+                                <div class="text">
+                                    <h6>Diversity and Inclusion</h6>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>Our durability, which spans years and generations, stems from the awareness that we are
+                            more than just a financial organization. We are engaged members of our communities,
+                            leaders in commerce and philanthropy on a worldwide scale, and conscientious designers
+                            of cutting-edge programs for employee support and benefits.</p>
+                        <a href="{% url 'main:outlook' %}" class="lab-btn mt-3 mb-5 mb-sm-0">Read More...</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="thumb">
+                                    <img src="{% static 'img/homepage/2a.jpg' %}" alt="about" class="w-100" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-12">
+                                <div class="thumb">
+                                    <img src="{% static 'img/homepage/2b.jpg' %}" alt="about" class="w-100" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-12">
+                                <div class="thumb thumb--content">
+                                    <h4>Corporate
+                                        <br />
+                                        Financial
+
+                                        Advisor
+                                    </h4>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+
+
+
+    <!-- ==========specialtie Section Starts Here========== -->
+    <div class="specialtie specialtie__two padding-tb">
+        <div class="container">
+            <div class="section__wrapper">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12">
+                        <div class="specialtie__item">
+                            <div class="specialtie__inner">
+                                <div class="specialtie__thumb">
+                                    <img src="{% static 'img/homepage/3a.jpg' %}" alt="" class="w-100" />
+                                </div>
+                                <div class="specialtie__content">
+                                    <h2>The {{ siteName|default:'siteName'|upper }} Difference</h2>
+                                    <p>Thorough study, not speculative prediction, is required for successful
+                                        commercial investing. {{ siteName|default:'siteName'|upper }} thinks that good fortune in investing results from
+                                        smart thinking. The firm's purpose is to employ value-oriented investment
+                                        thesis-driven bottom-up analytical techniques, complex legal and financial
+                                        frameworks, and proactive asset management to deals.</p>
+                                    <div class="row g-4 mt-4">
+                                        <div class="col-sm-6 col-12">
+                                            <div class="thumb">
+                                                <img src="{% static 'img/homepage/3b.jpg' %}" alt="" />
+                                                <a href="https://www.youtube.com/embed/4LcmeeNdBL0"
+                                                    data-rel="lightcase" class="icon"><i
+                                                        class="fa-solid fa-play"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-12">
+                                            <div class="content">
+                                                <ul>
+                                                    <li><i class="fa-solid fa-circle-check"></i>Technology</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i>Clean Energy</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i>Insurance</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i>Assets</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========specialtie Section Ends Here========== -->
+
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about about__one padding-tb bg-color">
+        <div class="container">
+            <div class="row g-5 flex-row-reverse align-items-end">
+                <div class="col-lg-6 col-12 ps-lg-4">
+                    <div class="about__content">
+                        <h6>How to grow business</h6>
+                        <h2>We manage your assets and investments</h2>
+                        <p>
+                            We put the ideas of the globe's most successful people, families, and organizations into
+                            action via our experience and devotion, allowing us to assist our customers in reaching
+                            their most lofty targets.
+                        </p>
+                        <p>
+                            Our history, going back years, stems from the awareness that we are more than just a
+                            financial organization.
+                        </p>
+                        <p>
+                            We are engaged members of our communities, worldwide business and philanthropic leaders,
+                            and mindful designers of innovative financial compensation and support programs.
+                        </p>
+                        <p>
+                            Our teams attempt to generate value across numerous sectors, industries, and locations
+                            by investing in leveraged buyouts, public equity, structured finance, FX trading,
+                            venture capital, and real estate.
+                        </p>
+                        <p>We feel that our people and the common principles we've promoted from our inception are
+                            the foundation of our competitive edge. This has enabled us to make a long-term
+                            difference for a wide range of investors, including pension funds, endowments,
+                            foundations, and individuals.</p>
+                        <div class="about__footer">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="thumb thumb--2 text-end">
+                                <img src="{% static 'img/homepage/4b.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <img src="{% static 'img/about/icon/03.png' %}" alt="Icon" />
+                                    <h5>We're ready to
+                                        <br />
+                                        assist you
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/homepage/4a.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+
+
+
+    <!-- ==========Work Section Starts Here========== -->
+    <div class="work padding-tb">
+        <div class="container">
+            <div class="section__header text-center">
+                <h6>How We Work</h6>
+
+            </div>
+            <div class="section__wrapper">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="work__item">
+                            <div class="work__inner">
+                                <div class="work__thumb">
+                                    <img src="{% static 'img/work/icon/01.png' %}" alt="work icon" />
+                                    <span>01</span>
+                                </div>
+                                <div class="work__content text-center">
+                                    <h4>Asset Administration</h4>
+                                    <p>A lot of fiscal time period learning about your specific financial objectives
+                                        and requirements before designing a portfolio to assist you achieve the,
+                                        hence, we do not provide pre-packaged portfolios.. We additionally check in
+                                        on a frequent basis to see whether anything in your life has changed that
+                                        would need portfolio plan modifications.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="work__item">
+                            <div class="work__inner">
+                                <div class="work__thumb">
+                                    <img src="{% static 'img/work/icon/02.png' %}" alt="work icon" />
+                                    <span>02</span>
+                                </div>
+                                <div class="work__content text-center">
+                                    <h4>Financial Advisors</h4>
+                                    <p>We are one of the world's leading asset managers, managing assets through
+                                        active investing methods, with over 370 billion dollars in assets under
+                                        management. We assist individual and institutional clients in developing and
+                                        protecting their financial assets ranging from fixed income, stocks, etc.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="work__item">
+                            <div class="work__inner">
+                                <div class="work__thumb">
+                                    <img src="{% static 'img/work/icon/03.png' %}" alt="work icon" />
+                                    <span>03</span>
+                                </div>
+                                <div class="work__content text-center">
+                                    <h4>Pecuniary Preparation</h4>
+                                    <p>It's more crucial than ever to create a plan in recent times. Our framework
+                                        for financial preparation not only provides you the assurance that you're
+                                        prepared for everything, but it's also intended to help you achieve all of
+                                        your aspirations in the upcoming days.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========Work Section Ends Here========== -->
+
+
+    <!-- ==========Services Section Starts Here========== -->
+    <div class="service bg-color padding-tb">
+        <div class="container">
+            <div class="section__header text-center">
+                <h3>Our Services</h3>
+                <h6>Our Business group and Structured Finance statisticians power our investment strategies'
+                    generation of ideas and risk analysis.</h6>
+            </div>
+            <div class="section__wrapper">
+                <div class="row gx-4 gy-5 justify-content-center">
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="service__item">
+                            <div class="service__inner text-center">
+                                <div class="service__thumb">
+                                    <a href="{% url 'main:diversity' %}">
+                                        <img src="{% static 'img/homepage/5a.jpg' %}" alt="service" />
+                                    </a>
+                                </div>
+                                <div class="service__content">
+                                    <span>D & I</span>
+                                    <h4><a href="{% url 'main:diversity' %}">Diversity & Inclusion</a></h4>
+                                    <p>We distinguish our investment services from those of our competitors based on
+                                        the experience of our consultants, our proprietary investment technology,
+                                        culture of risk management and our investment research. In addition, we are
+                                        also characterized by our unique service delivery model.</p>
+                                    <a href="{% url 'main:diversity' %}" class="round-btn"><i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="service__item">
+                            <div class="service__inner text-center">
+                                <div class="service__thumb">
+                                    <a href="{% url 'main:esg' %}">
+                                        <img src="{% static 'img/homepage/5b.jpg' %}" alt="service" />
+                                    </a>
+                                </div>
+                                <div class="service__content">
+                                    <span>ESG</span>
+                                    <h4><a href="{% url 'main:esg' %}">ESG Considerations</a></h4>
+                                    <p>Our primary commitments include incorporating ESG factors into our investment
+                                        decisions, starting with the due diligence of potential investments through
+                                        to the exit process.</p>
+                                    <a href="{% url 'main:esg' %}" class="round-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="service__item">
+                            <div class="service__inner text-center">
+                                <div class="service__thumb">
+                                    <a href="{% url 'main:forecast' %}">
+                                        <img src="{% static 'img/homepage/5c.jpg' %}" alt="service" />
+                                    </a>
+                                </div>
+                                <div class="service__content">
+                                    <span>Financial</span>
+                                    <h4><a href="{% url 'main:forecast' %}">Financial Forecast</a></h4>
+                                    <p>
+                                        {{ siteName|default:'siteName'|upper }} singular focus is preserving capital while maximizing returns and
+                                        minimizing risk.
+
+                                        {{ siteName|default:'siteName'|upper }} invests in single property transactions, multiple property portfolios,
+                                        and real estate-related operating companies.
+                                    </p>
+                                    <a href="{% url 'main:forecast' %}" class="round-btn"><i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ==========Services Section Ends Here========== -->
+
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about about__two padding-tb">
+        <div class="container">
+            <div class="section__header text-center">
+                <h3>why choose us</h3>
+                <h6>100% investment diversification policy ensures sustainability</h6>
+            </div>
+            <div class="section__wrapper">
+                <div class="row g-5 flex-row-reverse">
+                    <div class="col-lg-6 col-12">
+                        <div class="about__thumb">
+                            <div class="row g-4">
+                                <div class="thumb thumb--2">
+                                    <img src="{% static 'img/homepage/6a.jpg' %}" alt="About Image" />
+                                    <div class="thumb--experience text-start">
+                                        <div class="pie"
+                                            data-pie='{ "index": 1, "percent": 80, "colorSlice": "#021738", "colorCircle": "#fff", "fontWeight": 700, "stroke": 6, "size": 70,"fontSize": "1.5rem","fontColor":"#021738" }'>
+                                        </div>
+                                        <h5>A true global
+                                            <br />
+                                            Reach
+                                        </h5>
+                                    </div>
+                                    <div class="floating-img">
+                                        <img src="{% static 'img/homepage/6b.jpg' %}" alt="About Image" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="about__content">
+                            <p>
+                                {{ siteName|default:'siteName'|upper }} Holdings manage a diverse and highly recognised group of endowments,
+                                foundations, public and private pension plans, financial firms, family offices, and
+                                sovereign entities across the risk/return spectrum.
+                            </p>
+                            <p>
+                                The key to collaborating with top management of high-potential companies is to
+                                provide access to the right mix of operational skills, specialist sector experience,
+                                and global insights.
+                            </p>
+
+                            <p>
+                                We have extensive qualitative and quantitative knowledge to assist you invest for a
+                                better future as a global provider of business indexes, advanced analytics, and
+                                multi-asset investment solutions.
+                            </p>
+                            <p>
+                                Asset allocation, traditional and unconventional manager research, portfolio
+                                construction, and other services are among our investment solutions.
+
+                            </p>
+                            <p>
+                                We address your specific requirements using a comprehensive, structured process
+                                honed by our work with the some of the world's largest and most advanced investors.
+                            </p>
+
+                            <p>{{ siteName|default:'siteName'|upper }} Holdings is among the largest global diverse investment property managers,
+                                providing a wide range of private property debt and equity solutions.</p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+
+    <!-- ==========Testimonial Section Starts Here========== -->
+    <div class="testimonial testimonial__three padding-tb bg-img"
+        style="background-image: url({% static 'img/bg/04.jpg' %});">
+        <div class="container">
+            <div class="section__header text-center me-auto">
+                <br />
+                <br />
+                <br />
+                <h2>our Testimonial</h2>
+                <h6>What our clients are saying about us</h6>
+            </div>
+            <div class="section__wrapper">
+                <div class="row g-4">
+                    <div class="col-xl-6 col-12">
+                        <div class="testimonial__video">
+                            <div class="thumb">
+                                <img src="{% static 'img/homepage/7.jpg' %}" alt="testimonial thumb" class="w-100" />
+                            </div>
+                            <a href="https://www.youtube.com/embed/VgHtUY1Q4BE" data-rel="lightcase" class="icon"><i
+                                    class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-12">
+                        <div class="section__wrapper">
+                            <div class="testimonial__rivew overflow-hidden">
+                                <div class="testimonial__slider__three">
+                                    <div class="swiper-wrapper">
+                                        {% for i in testimonies %}
+                                            <div class="swiper-slide">
+                                                <div class="testimonial__item">
+                                                    <div class="testimonial__inner">
+                                                        <div class="testimonial__thumb">
+                                                            <div class="thumb">
+                                                                {% if i.img %}
+                                                                    <img src="{{ i.image.url }}"
+                                                                        alt="testimonial" />
+                                                                {% else %}
+                                                                    <img src="{% static 'img/homepage/7.jpg' %}" alt="testimonial" />
+                                                                {% endif %}
+                                                            </div>
+                                                            <div class="testimonial__author">
+                                                                <div class="name">
+                                                                    <h5>{{ i.name }}</h5>
+                                                                    <span>{{ i.title }}</span>
+                                                                </div>
+                                                                <div class="rating">
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="testimonial__content">
+                                                            <p>{{ i.description }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========Testimonial Section Ends Here========== -->
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about about__three padding-tb">
+        <div class="container">
+            <div class="row g-5 flex-row-reverse">
+                <div class="col-lg-6 col-12 ps-lg-4">
+                    <div class="about__content">
+                        <h2>Why Us?</h2>
+                        <h6>More reasons that shows we're your sure bet</h6>
+                        <p>We aim to inspire teams of individuals to develop innovative business ideas. We achieve
+                            this, for example, by using a sector- and sub-sector-based approach. </p>
+                        <p>
+                            It enhances our comprehension of the trends that are significant to management teams. It
+                            assists in locating fresh opportunities and controlling potential negative risks.
+                            This improves {{ siteName|default:'siteName'|upper }} Holdings as a partner.
+                        </p>
+                        <p>In order to help our clientele with asset allocation design, transformation, and ongoing
+                            risk assessment, the team at {{ siteName|default:'siteName'|upper }} Holding's Portfolio Investment Strategy offers a
+                            personalized service. </p>
+                        <p>The team creates asset allocation creation, risk analysis, and historical trading
+                            analytical techniques for the {{ siteName|default:'siteName'|upper }} Holding app. Events involving liquidity and
+                            substantial market metrics are also examined.</p>
+                        <p>The investments of {{ siteName|default:'siteName'|upper }} Holdings are set up in a variety of capital forms, including
+                            senior loans, mezzanine loans, preferred equity, and equity. On the basis of investment
+                            basis, capital preservation, and risk-adjusted return, {{ siteName|default:'siteName'|upper }} holdings decide on its
+                            capital structure for a specific transaction. </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="col-12 ">
+                                <div class="thumb">
+                                    <img src="{% static 'img/homepage/8a.jpg' %}" alt="about" class="w-100" />
+                                    <div class="thumb--experience text-start">
+                                        <img src="{% static 'img/about/icon/03.png' %}" alt="Icon">
+                                        <h5>We're ready to
+                                            <br>
+                                            assist you
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-12">
+                                <div class="thumb">
+                                    <img src="{% static 'img/homepage/8b.jpg' %}" alt="about" class="w-100" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-12 ">
+                                <div class="thumb">
+                                    <img src="{% static 'img/homepage/8c.jpg' %}" alt="about" class="w-100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+
+
+    <!-- ==========Project Section Starts Here========== -->
+    <div class="project mb-none-120">
+        <div class="container-fluid">
+            <div class="project__slider overflow-hidden">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="project__item">
+                            <div class="project__inner">
+                                <div class="project__thumb">
+                                    <img src="{% static 'img/homepage/9a.jpg' %}" alt="project" />
+                                </div>
+                                <div class="project__content">
+                                    <h4><a href="{% url 'main:strategies' %}">Strategy</a></h4>
+                                    <span>Strategy</span>
+                                </div>
+                                <a href="{% url 'main:strategies' %}" class="project__icon"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project__item">
+                            <div class="project__inner">
+                                <div class="project__thumb">
+                                    <img src="{% static 'img/homepage/9b.jpg' %}" alt="project" />
+                                </div>
+                                <div class="project__content">
+                                    <h4><a href="{% url 'main:forecast' %}">Financial</a></h4>
+                                    <span>Financial Forecast</span>
+                                </div>
+                                <a href="{% url 'main:forecast' %}" class="project__icon"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project__item">
+                            <div class="project__inner">
+                                <div class="project__thumb">
+                                    <img src="{% static 'img/homepage/9c.jpg' %}" alt="project" />
+                                </div>
+                                <div class="project__content">
+                                    <h4><a href="{% url 'main:forex' %}">Forex </a></h4>
+                                    <span>Forex Trading</span>
+                                </div>
+                                <a href="{% url 'main:forex' %}" class="project__icon"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project__item">
+                            <div class="project__inner">
+                                <div class="project__thumb">
+                                    <img src="{% static 'img/homepage/9d.jpg' %}" alt="project" />
+                                </div>
+                                <div class="project__content">
+                                    <h4><a href="{% url 'main:ai' %}">AI</a></h4>
+                                    <span>AI Algorithm</span>
+                                </div>
+                                <a href="{% url 'main:ai' %}" class="project__icon"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project__item">
+                            <div class="project__inner">
+                                <div class="project__thumb">
+                                    <img src="{% static 'img/homepage/9b.jpg' %}" alt="project" />
+                                </div>
+                                <div class="project__content">
+                                    <h4><a href="{% url 'main:diversity' %}">D & I</a></h4>
+                                    <span>Diversity & Inclusion</span>
+                                </div>
+                                <a href="{% url 'main:diversity' %}" class="project__icon"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========Project Section Ends Here========== -->
+
+
+    <!-- ==========specialtie Section Starts Here========== -->
+    <div class="specialtie padding-tb bg-img"
+        style="background-image: url({% static 'img/bg/03.jpg' %}); background-position: center;">
+        <div class="container">
+            <div class="section__header text-center">
+                <br />
+                <br />
+                <br />
+                <h2>Our specialties</h2>
+                <h6>Get the best investment advice from your top expert advisors</h6>
+            </div>
+            <div class="section__wrapper">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                        <div class="specialtie__item">
+                            <div class="specialtie__inner">
+                                <div class="specialtie__thumb">
+                                    <img src="{% static 'img/specialtie/01.png' %}" alt="specialtie thumb" />
+                                </div>
+                                <div class="specialtie__content">
+                                    <h2 class="odometer mb-0" data-odometer-final="66">0</h2>
+                                    <h5>Project(s) Completed</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                        <div class="specialtie__item">
+                            <div class="specialtie__inner">
+                                <div class="specialtie__thumb">
+                                    <img src="{% static 'img/specialtie/02.png' %}" alt="specialtie thumb" />
+                                </div>
+                                <div class="specialtie__content">
+                                    <h2 class="odometer mb-0" data-odometer-final="7890">0</h2>
+                                    <h5>satisfied clientele</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                        <div class="specialtie__item">
+                            <div class="specialtie__inner">
+                                <div class="specialtie__thumb">
+                                    <img src="{% static 'img/specialtie/03.png' %}" alt="specialtie thumb" />
+                                </div>
+                                <div class="specialtie__content">
+                                    <h2 class="odometer mb-0" data-odometer-final="15">0</h2>
+                                    <h5>Award(s)</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                        <div class="specialtie__item">
+                            <div class="specialtie__inner">
+                                <div class="specialtie__thumb">
+                                    <img src="{% static 'img/specialtie/04.png' %}" alt="specialtie thumb" />
+                                </div>
+                                <div class="specialtie__content">
+                                    <h2 class="odometer mb-0" data-odometer-final="128">0</h2>
+                                    <span>+</span>
+                                    <h5>WorkForce</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========specialtie Section Ends Here========== -->
+
+
+    <!-- ==========Misson Section Starts Here========== -->
+    <div class="misson padding-tb">
+        <div class="container">
+            <div class="section__header text-center">
+                <h6>Discover our company</h6>
+                <h2>We’ve been thriving since 15 years</h2>
+            </div>
+            <div class="section__wrapper">
+                <ul class="nav nav-tabs justify-content-center misson__tabul" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active lab-btn" id="tabOne" data-bs-toggle="tab"
+                            data-bs-target="#tabOne-pane" type="button" role="tab" aria-controls="tabOne-pane"
+                            aria-selected="true">our company mission</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link lab-btn" id="tabTwo" data-bs-toggle="tab"
+                            data-bs-target="#tabTwo-pane" type="button" role="tab" aria-controls="tabTwo-pane"
+                            aria-selected="false">our company vision</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link lab-btn" id="tabThree" data-bs-toggle="tab"
+                            data-bs-target="#tabThree-pane" type="button" role="tab" aria-controls="tabThree-pane"
+                            aria-selected="false">Our company strategy</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link lab-btn" id="tabFour" data-bs-toggle="tab"
+                            data-bs-target="#tabFour-pane" type="button" role="tab" aria-controls="tabFour-pane"
+                            aria-selected="false">our property portfolios</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="tabOne-pane" role="tabpanel" aria-labelledby="tabOne"
+                        tabindex="0">
+                        <div class="misson__item">
+                            <div class="misson__inner">
+                                <div class="misson__thumb">
+                                    <img src="{% static 'img/homepage/mission.jpg' %}" alt="" />
+                                </div>
+                                <div class="misson__content">
+                                    <h4>{{ siteName|default:'siteName'|upper }} Holdings mission</h4>
+                                    <p>Successful commercial investing depends on thorough analysis, not whimsical
+                                        prediction. {{ siteName|default:'siteName'|upper }} believes good fortune in investing is the product of good
+                                        thinking.</p>
+                                    <p>The firm’s goal is to apply disciplined bottom-up analytical procedures,
+                                        sophisticated legal and financial structures, and proactive asset management
+                                        to transactions that possess a value-oriented investment thesis.</p>
+
+                                    <p>{{ siteName|default:'siteName'|upper }} has been a national leader in the commercial private equity industry. The
+                                        firm combines a vast origination platform, a disciplined investment
+                                        strategy, and highly experienced professionals to generate risk-adjusted
+                                        investment returns that rank {{ siteName|default:'siteName'|upper }} among the top performers within its field.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tabTwo-pane" role="tabpanel" aria-labelledby="tabTwo"
+                        tabindex="0">
+                        <div class="misson__item">
+                            <div class="misson__inner">
+                                <div class="misson__thumb">
+                                    <img src="{% static 'img/homepage/vision.jpg' %}" alt="" />
+                                </div>
+                                <div class="misson__content">
+                                    <h4>{{ siteName|default:'siteName'|upper }} Holdings vision</h4>
+                                    <p>We strive to be one of the biggest investment managers in the world by
+                                        managing assets with active investment strategies and assisting private and
+                                        institutional clients in creating investment portfolios and safeguarding
+                                        their wealth. Our target asset size is 400 billion dollars.</p>
+
+                                    <p>
+                                        We hope to provide clients with access to our global network of top-notch
+                                        investment professionals for everything from fixed income to equities to
+                                        alternative investments.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tabThree-pane" role="tabpanel" aria-labelledby="tabThree"
+                        tabindex="0">
+                        <div class="misson__item">
+                            <div class="misson__inner">
+                                <div class="misson__thumb">
+                                    <img src="{% static 'img/homepage/strategy.jpg' %}" alt="" />
+                                </div>
+                                <div class="misson__content">
+                                    <h4>Our strategy</h4>
+                                    <p>{{ siteName|default:'siteName'|upper }} holdings has been providing value-added investment solutions for its
+                                        clients since 2008. While our investment strategies, clients and assets have
+                                        grown significantly since our founding, there have been several principles
+                                        that we have followed throughout our firm’s history.</p>
+                                    <ul>
+                                        <li><i class="fa-solid fa-circle-check"></i>Act in the best interests of
+                                            clients.</li>
+                                        <li><i class="fa-solid fa-circle-check"></i>Act in a way that is ethical and
+                                            legal</li>
+                                        <li><i class="fa-solid fa-circle-check"></i>Compete aggressively to succeed.
+                                        </li>
+                                    </ul>
+                                    <a href="{% url 'main:strategies' %}" class="lab-btn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tabFour-pane" role="tabpanel" aria-labelledby="tabFour"
+                        tabindex="0">
+                        <div class="misson__item">
+                            <div class="misson__inner">
+                                <div class="misson__thumb">
+                                    <img src="{% static 'img/homepage/portfolio.jpg' %}" alt="" />
+                                </div>
+                                <div class="misson__content">
+                                    <h4>our company property portfolios</h4>
+                                    <p>
+                                        {{ siteName|default:'siteName'|upper }}'s primary goal is capital preservation while maximizing returns and
+                                        lowering risk.
+
+                                        <br />
+                                        <br />
+
+                                        {{ siteName|default:'siteName'|upper }} makes investments in single property deals, multi-property portfolios,
+                                        and operating businesses involved in the real estate industry.
+
+                                    </p>
+                                    <p>
+                                        The company actively engages in transactions with joint development
+                                        operating partners and 3rd parties borrowers in addition to purchasing and
+                                        managing properties for its own account.
+
+                                    </p>
+                                    <p>
+                                        Office, storage facility, retail, apartments, hotels/resorts, land, for-sale
+                                        residential, and mixed-use properties are just a few of the main commercial
+                                        real estate asset classes that can be considered for investment.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========Misson Section Ends Here========== -->
+
+{% endblock content %}
+    

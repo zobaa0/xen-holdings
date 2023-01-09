@@ -1,0 +1,40 @@
+.account__confirm {
+    background: #5E0623;
+    border-radius: 3px;
+    padding: 10px 36px;
+    outline: none;
+    box-shadow: none;
+    font-weight: 500;
+    font-size: 17px;
+    border: none;
+}
+
+
+.account__confirm:hover {
+    background: #db9e2d;
+    border-color: #db9e2d;
+}
+
+input {
+    background: transparent !important;
+    color: #fff !important;
+    outline: none !important;
+}
+
+input:focus {
+    outline: none !important;
+    border: none !important;
+    transition: none !important;
+}
+
+@media (max-width: 1999px) {
+    .account {
+        padding-top: 4em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .account {
+        padding-top: 12em;
+    }
+}

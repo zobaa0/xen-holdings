@@ -1,0 +1,254 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ siteName|default:'siteName'|upper }} Holdings | Financial Forecast
+{% endblock title %}
+
+{% block header %}
+   header__three 
+{% endblock header %}
+
+{% block site__head %}
+style='font-weight: bold; color: #5E0623; font-size: 20px;'
+{% endblock %}
+
+{% block content %}
+<!-- ==========Page Header Section Starts Here========== -->
+<div class="pageheader" style="background: url({% static 'img/outlook/bg/pageheader.jpg' %});">
+    <div class="container">
+        <div class="pageheader__content">
+            <h2>Financial Forecast</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home | </a></li>
+                    <li class="px-2 active" aria-current="page" style="color: #5E0623;">Financial Forecast</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- ==========Page Header Section Ends Here========== -->
+
+
+<!-- ==========Services Section Starts Here========== -->
+<div class="service service__single padding-tb">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center flex-row-reverse">
+                <div class="col-lg-8 col-12">
+                    <div class="mainarea">
+                        <div class="service__item">
+                            <div class="service__inner">
+                                <div class="service__thumb">
+                                    <img src="{% static 'img/forecast/1a.jpg' %}" alt="" />
+                                </div>
+                                <div class="service__content">
+                                    <h4>Why choose {{ siteName|default:'siteName'|upper }} Financial Forecast Methodology</h4>
+                                    <p>
+                                        A Financial Plan That Is Specialized For Your Situation At {{ siteName|default:'siteName'|upper }} Holdings, the
+                                        process of financial planning begins with a thorough comprehension of your
+                                        long-term objectives. We don't categorize you into a pre-set category. Instead,
+                                        we want to understand your unique needs and goals so that we can tailor a
+                                        recommendation for you.
+                                        Your existing fiscal circumstance, including your investment objectives,
+                                        timeframe, revenue and expenses, asset allocation distributions, and liquidity
+                                        requirements, will be thoroughly investigated by one of our financial management
+                                        specialists. In order to assist you in making the best decisions for your
+                                        financial future, we will use the information you provide to develop a
+                                        customized financial plan that includes concise, understandable information.
+                                    </p>
+                                    <div class="row g-4 mb-4">
+                                        <div class="col-sm-6 col-12">
+                                            <ul>
+                                                <li><i class="fa-solid fa-circle-check"></i>We offer an equity
+                                                    management approach</li>
+                                                <li><i class="fa-solid fa-circle-check"></i>We provide you with
+                                                    financial information</li>
+                                                <li><i class="fa-solid fa-circle-check"></i>We do not obtain referrals.
+                                                </li>
+                                                <li><i class="fa-solid fa-circle-check"></i>We will not sell you
+                                                    annuities or other high-priced insurance products</li>
+                                                <li><i class="fa-solid fa-circle-check"></i>We don't give your
+                                                    information to outside organizations to create your plan</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6 col-12">
+                                            <img src="{% static 'img/forecast/1b.jpg' %}" alt="" class="w-100">
+                                        </div>
+                                    </div>
+                                    <h4>Financial Forecast Strategy</h4>
+                                    <p>Premised on your protracted financial goals and objectives, an appropriate
+                                        investment advice will play a contribution to the overall accomplishment of your
+                                        financial plan. In order to develop a thorough understanding of the goals for
+                                        your assets, we at {{ siteName|default:'siteName'|upper }} Holdings consider everything from your family's medical
+                                        history to the specific stocks, bonds, or other investment opportunities in your
+                                        portfolio.<br />
+                                        We are able to offer an investment recommendation that we think has the best
+                                        chance of assisting you in achieving your objectives by using tools like
+                                        historical modeling and portfolio simulations. This advice lays the groundwork
+                                        for your future monetary success and could prevent you from running a deficit in
+                                        retirement..</p>
+                                    <div class="feature feature__two py-4">
+                                        <div class="section__wrapper">
+                                            <div class="row g-4 justify-content-center">
+                                                <div class="col-xl-4 col-sm-6 col-12">
+                                                    <div class="feature__item">
+                                                        <div class="feature__inner">
+                                                            <div class="feature__thumb">
+                                                                <img src="{% static 'img/forecast/feature/icon/04.png' %}"
+                                                                    alt="feature icon" />
+                                                            </div>
+                                                            <div class="feature__content">
+                                                                <h5>Financial Plan Assessment</h5>
+                                                                <p>
+                                                                    How well does your budgetary strategy work? We can
+                                                                    assist you with budget preparation for the years
+                                                                    ahead and also with determine whether you're on
+                                                                    track to accomplish your objectives.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-6 col-12">
+                                                    <div class="feature__item">
+                                                        <div class="feature__inner">
+                                                            <div class="feature__thumb">
+                                                                <img src="{% static 'img/forecast/feature/icon/05.png' %}"
+                                                                    alt="feature icon" />
+                                                            </div>
+                                                            <div class="feature__content">
+                                                                <h5>Income Plans for Retirement</h5>
+                                                                <p>After your regular paychecks stop coming in, you
+                                                                    might need to start drawing money from your
+                                                                    investments. Without draining your resources, we can
+                                                                    assist you in figuring out how to proceed.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-6 col-12">
+                                                    <div class="feature__item">
+                                                        <div class="feature__inner">
+                                                            <div class="feature__thumb">
+                                                                <img src="{% static 'img/forecast/feature/icon/06.png' %}"
+                                                                    alt="feature icon" />
+                                                            </div>
+                                                            <div class="feature__content">
+                                                                <h5>Portfolio Administration</h5>
+                                                                <p>We design and manage portfolios that are specific to
+                                                                    your circumstances and financial objectives. Are
+                                                                    overlapping investment opportunities and layered
+                                                                    fund fees getting you down? We can assist.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="service__thumb">
+                                        <img src="{% static 'img/forecast/2a.jpg' %}" alt="" />
+                                    </div>
+                                    <br />
+                                    <h4>Lasting Financial Heritage</h4>
+                                    <p>Many venture capitalists discover that their time horizon for investing may
+                                        extend beyond their lifetime, giving them the chance to use their resources to
+                                        support someone or something that is important to them. While preparing for a
+                                        heritage is a normal expectation for many of our clients, it is not a
+                                        replacement for a suitable investment recommendation. In order to help you
+                                        invest and plan for your retirement and legacy goals, {{ siteName|default:'siteName'|upper }} Holdings offers
+                                        resources and education.</p>
+
+
+                                    <div class="service__thumb">
+                                        <img src="{% static 'img/forecast/31.jpg' %}" alt="" />
+                                    </div>
+                                    <br />
+                                    <h4>Financial Security</h4>
+                                    <p>Numerous shareholders want to believe that all of their wealth decisions—not just
+                                        their investment strategy and legacy—are being made with due knowledge and
+                                        caution. Realizing how taxes, cash flow needs, and Social Security benefits
+                                        relate to one another may have an impact on how you pay for living expenses both
+                                        before and after retirement. Identifying the link between your investments and
+                                        insurance requirements (such as health, long-term care, and retirement plans)
+                                        may also assist you in determining whether getting coverage is necessary.</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="sidebar">
+                        <div class="row g-4">
+                            <div class="col-lg-12 col-sm-6 col-12">
+                                <div class="sidebar__brochure">
+                                    <div class="head">
+                                        <h5>company Brochure</h5>
+                                    </div>
+                                    <div class="body">
+                                        <div class="thumb">
+                                            <img src="{% static 'img/forecast/side1.jpg' %}" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <p>{{ siteName|default:'siteName'|upper }} holdings believes that good corporate governance is the foundation of
+                                                effective corporate management. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-sm-6 col-12">
+                                <div class="sidebar__helps">
+                                    <div class="head">
+                                        <h5>Need Help?</h5>
+                                    </div>
+                                    <div class="body">
+                                        <div class="thumb">
+                                            <img src="{% static 'img/forecast/side2.jpg' %}" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <ul>
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="{% static 'img/forecast/service/icon/07.png' %}" alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <span>Monday - Friday</span>
+                                                        <p>09:00 AM - 05: 00 PM</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="{% static 'img/forecast/service/icon/08.png' %}" alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <span>Service Available</span>
+                                                        <p>{{ phone|default:'+1 302 389 5538'}}</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="{% static 'img/forecast/service/icon/09.png' %}" alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <span>1000 N West</span>
+                                                        <p>{{ address|default:'St Wilmington, DE 19801, USA' }}</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========Services Section Ends Here========== -->
+{% endblock content %}

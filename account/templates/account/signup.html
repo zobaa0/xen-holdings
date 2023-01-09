@@ -1,0 +1,97 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block style %}
+    {% static 'account/css/main.css' %}
+{% endblock style %}
+
+{% block title %}
+{{ siteName|default:'siteName'|upper }} Holdings | Register
+{% endblock title %}
+
+{% block header %}
+header__three
+{% endblock header %}
+
+{% block content %}
+<!-- SIGNUP PAGE -->
+<section class="account px-lg-5 px-1 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="background: url({% static 'img/outlook/bg/pageheader.jpg' %}); border: none;">
+                    <div class="card-body" style="box-shadow: rgb(1  1 75) 0px 3px 10px 0px;">
+                        <h4 class="pb-2 text-light text-xl-start">Register for a new account</h4>
+
+                        <!-- Render Errors -->
+                        {% if form.errors %}
+                        <div class="alert alert-danger alert-dismissible fade show pb-0" role="alert">
+                            <div id="form_errors" style="line-height: 1;">
+                                {% for key, value in form.errors.items %}
+                                <small>{{ value }}</small>
+                                {% endfor %}
+                            </div>
+                            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endif %}
+
+                        <form method="post" class="mb-3" style="letter-spacing: 1px;">
+                            {% csrf_token %}
+                            <div class="mb-3 form-group">
+                                <label for="username" class="form-label text-light">Username *</label>
+                                {{ form.username }}
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="email_add" class="form-label text-light">E-mail *</label>
+                                {{ form.email }}
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="password1" class="form-label text-light">Password *</label>
+                                {{ form.password1 }}
+                            </div>
+                            <div class="mb-4 form-group">
+                                <label for="password2" class="form-label text-light">Confirm Password *</label>
+                                {{ form.password2 }}
+                            </div>
+                            <!-- <div class="mb-3 form-check">
+                                {{ form.terms }}
+                                <label for="terms" class="form-check-label">I agree to
+                                    <a href="">Terms &amp; Conditions</a>
+                                </label>
+                            </div> -->
+
+                            <div class="form-group mt-4">
+                                <button class="btn btn-md btn-primary w-100 account__confirm">
+                                    Sign up
+                                </button>
+                            </div>
+                        </form>
+                        <div>
+                            <p class="text-center text-light">
+                                Already have an account?
+                                <a href="{% url 'account:login' %}"
+                                    class="text-light ml-0 pl-0"
+                                    style="text-decoration: underline; font-size: 15px;">Sign in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .alert {
+        border-radius: 12px !important;
+    }
+    small ul li {
+        list-style: square !important;
+        padding-bottom: 4px !important;
+    }
+    small ul {
+        padding-left: 10px !important;
+        padding-bottom: 10px !important;
+    }
+</style>
+{% endblock content %}

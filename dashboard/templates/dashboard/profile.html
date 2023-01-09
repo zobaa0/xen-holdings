@@ -1,0 +1,156 @@
+{% extends 'dashboard/settings.html' %}
+
+<!-- TITLE -->
+{% block title %}
+{{ request.user.username|title }} | profile
+{% endblock title %}
+
+
+{% block profile %}
+  <!-- Account details -->
+  <div class="col-md-8 offset-lg-1 pb-5 mb-2 mb-lg-4 pt-md-0 mt-n3 mt-md-0">
+    <div class="ps-md-3 ps-lg-0 mt-md-2 py-md-0">
+      <h1 class="h2 pt-xl-1 pb-3">Account Details</h1>
+
+      <!-- Basic info -->
+      <h2 class="h5 text-primary mb-4">Basic info</h2>
+      <!-- Render Errors -->
+      {% if basic_info.errors %}
+        <div class="alert alert-danger alert-dismissible fade show pb-0" role="alert">
+            <div id="form_errors" style="line-height: 1;">                                            
+                {% for key, value in basic_info.errors.items  %}
+                  <small>{{ value }}</small>
+                {% endfor %}                                                
+            </div>                                        
+            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endif %}
+      <form class="border-bottom pb-3 pb-lg-4" method="post">
+        {% csrf_token %}
+        <div class="row pb-2">
+          <div class="col-sm-6 mb-4">
+            <label for="fn" class="form-label fs-base">First name</label>
+            {{ basic_info.first_name }}
+          </div>
+          <div class="col-sm-6 mb-4">
+            <label for="ln" class="form-label fs-base">Last name</label>
+            {{ basic_info.last_name }}
+          </div>
+          <div class="col-sm-6 mb-4">
+            <label for="email" class="form-label fs-base">Email address</label>
+            {{ basic_info.email }}
+          </div>
+          <div class="col-sm-6 mb-4">
+            <label for="username" class="form-label fs-base">Username</label>
+            <input type="text" id="username" class="form-control form-control-md" style="background: lightslategrey; font-weight: bold;"
+            value="{{ request.user.username|title }}" disabled>
+            <!-- <div class="invalid-feedback">Please provide a valid email address!</div> -->
+          </div>
+          <input type="hidden" name="form_type" value="formOne">
+        </div>
+        <div class="d-flex mb-3">
+          <button type="reset" class="btn btn-warning me-3">Cancel</button>
+          <button type="submit" class="btn btn-primary" name="form1">Save changes</button>
+        </div>
+      </form>
+
+      <!-- Address -->
+      <h2 class="h5 text-primary pt-1 pt-lg-3 my-4">Address</h2>
+      <!-- Render Errors -->
+      {% if address_info.errors %}
+        <div class="alert alert-danger alert-dismissible fade show pb-0" role="alert">
+            <div id="form_errors" style="line-height: 1;">                                            
+                {% for key, value in address_info.errors.items  %}
+                  <small>{{ value }}</small>
+                {% endfor %}                                                
+            </div>                                        
+            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endif %}
+      <form class="border-bottom pb-2 pb-lg-4" method="post">
+        {% csrf_token %}
+        <div class="row pb-2">
+          <div class="col-sm-6 mb-4">
+            <label for="country" class="form-label fs-base">Country</label>
+            {{ address_info.country }}
+            <div class="invalid-feedback">Please choose your country!</div>
+          </div>
+          <div class="col-sm-6 mb-4">
+            <label for="phone_no" class="form-label fs-base">Phone Number</label>
+            {{ address_info.phone }}
+          </div>
+          <div class="col-12 mb-4">
+            <label for="address" class="form-label fs-base">Permanent Address</label>
+            {{ address_info.address }}
+          </div>
+        </div>
+        <input type="hidden" name="form_type" value="formTwo">
+        <div class="d-flex mb-3">
+          <button type="reset" class="btn btn-warning me-3">Cancel</button>
+          <button type="submit" class="btn btn-primary" name="form2">Save changes</button>
+        </div>
+      </form>
+
+      <!-- Delete account -->
+      <h2 class="h5 text-primary pt-1 pt-lg-3 mt-4">Delete account</h2>
+      <p>When you delete your account, your public profile will be deactivated immediately. 
+        If you change your mind before the 14 days are up, send a mail to our support team, 
+        and we’ll send you a link to reactivate your account.</p>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-check mb-4">
+          {{ delete_account.del_account }}
+          <label for="delete-account" class="form-check-label">Yes, I want to delete my account</label>
+        </div>
+        <input type="hidden" name="form_type" value="formThree">
+        <p data-bs-toggle="modal" data-bs-target="#del_account" class="btn btn-danger" name="form3">Delete</p>
+
+        <!-- DELETE ACCOUNT MODAL -->
+        <div class="modal fade" id="del_account" tabindex="-1" role="dialog" style="margin-top: 10em;">
+          <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content" style="background: #141822;">
+                  <div class="modal-body">
+                      <h6>Confirm Delete</h6>
+                      <p>
+                        Are you sure you want to delete your account?  
+                      </p>
+                      <button type="submit" class="btn btn-danger w-100 btn-sm" name="form3">Confirm</button>
+                      <br>
+                      <button type="button" class="btn btn-warning btn-sm w-100 mt-2" data-bs-dismiss="modal">
+                          Close
+                      </button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+    
+{% endblock profile %}
+
+{% block style %}
+  <style>
+    input[type=checkbox] {
+      margin-top: 0 !important;
+      padding: 9px !important;
+    }
+    
+    .alert {
+        border-radius: 12px !important;
+    }
+
+    small ul li {
+        list-style: square !important;
+        padding-bottom: 4px !important;
+    }
+
+    small ul {
+        padding-left: 10px !important;
+        padding-bottom: 10px !important;
+    }
+  </style>
+{% endblock style %}
+  
+    

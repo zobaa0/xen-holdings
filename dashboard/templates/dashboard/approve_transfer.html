@@ -1,0 +1,51 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+    <!-- TITLE -->
+    {% block title %}
+        beeLabbs | confirm_transfer
+    {% endblock title %}
+
+    <!-- HEADING -->
+    {% block heading %}
+        TRANSFER
+    {% endblock heading %}
+    
+    <!-- MAIN CONTENT -->
+    {% block content %}
+    <section class="summary px-lg-5 px-3 py-3">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 stretch-card">
+                <div class="card bg-transparent">
+                    <div class="card-body">
+                        <!-- HANDLING ERRORS -->
+                        {% if error %}
+                            <div class="alert alert-danger alert-dismissible fade show pb-0" role="alert">
+                                <div id="form_error" class="pb-3" style="line-height: 1;">                                            
+                                        <span>Invalid password entered.</span>
+                                </div>                                        
+                                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endif %}
+                        <h4 class="pb-0 mb-0">Confirm Transfer</h4>
+                        <hr>
+                        <form method="post">{% csrf_token %}
+                            <div class="mb-3 mt-4 form-group amt" style="">
+                                <label for="password" class="form-label text-light">Confirm Password: *</label>
+                                <input type="password" name="password" 
+                                placeholder="Enter your Password" class="form-control form-control-sm">
+                            </div>
+                           <input type="submit" value="" class="d-none">
+                            <div class="draw" style="margin-top: 30px;">
+                                <button class="btn btn-sm btn-primary d-block" type="submit">Confirm Transfer</button>
+                            </div>                
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        
+    </style>
+    {% endblock content %}

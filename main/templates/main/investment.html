@@ -1,0 +1,360 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ siteName|default:'siteName'|upper }} Holdings | Investment
+{% endblock title %}
+
+{% block site__head %}
+style='font-weight: bold; color: #5E0623; font-size: 20px;'
+{% endblock %}
+
+{% block header %}
+header__three
+{% endblock header %}
+
+{% block content %}
+<!-- ==========Page Header Section Starts Here========== -->
+<div class="pageheader" style="background: url({% static 'img/outlook/bg/pageheader.jpg' %});">
+    <div class="container">
+        <div class="pageheader__content">
+            <h2>Investments</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home | </a></li>
+                    <li class="px-2 active" aria-current="page" style="color: #5E0623;">investments</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- ==========Page Header Section Ends Here========== -->
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about padding-tb" style="padding-bottom: 15px;">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 col-12">
+                <div class="about__content">
+                    <h2>Responsible Investment Strategy</h2>
+                    <p>
+                        Our goal at {{ siteName|default:'siteName'|upper }} Holdings is to make wise investments and support the expansion of emerging
+                        companies. We assist investors in achieving their financial goals for the benefit of their
+                        clients, beneficiaries, families, and communities by investing our own capital as well as the
+                        capital of our investment partners from around the world, including public and private pension
+                        funds, sovereign wealth funds, insurance companies, foundations, family offices, and high net
+                        worth individuals.
+                    </p>
+                    <p>
+                        We acknowledge that environmental, social, and governance ("ESG") issues, such as those
+                        connected to climate change, are receiving more attention from investors, employees, and other
+                        stakeholders, which is changing the way they invest and the employers they choose.
+                    </p>
+                    <p>
+                        Managing our firm and making investments wisely requires that we take these shifting priorities
+                        into account.
+                    </p>
+
+
+
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about__thumb">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="thumb">
+                                <img src="{% static 'img/investment/1a.jpg' %}" alt="about" class="w-100" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="thumb">
+                                <img src="{% static 'img/investment/1b.jpg' %}" alt="about" class="w-100" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="thumb thumb--content">
+                                <h4>Responsible
+                                    <br />
+                                    Investment
+                                </h4>
+                                <img src="{% static 'img/about/icon/03.png' %}" alt="about icon" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 10px; margin-bottom: 5px;">
+                By assisting in the identification of business opportunities and risks, we think that incorporating ESG
+                factors into our investment process can significantly contribute to the creation of value. We evaluate
+                important ESG factors for each company across all of our platforms, including private equity, credit,
+                and wealth management, while also taking into account more general ESG factors that are significant to
+                the industries in which they operate.
+            </p>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+
+
+<!-- ==========Work Section Starts Here========== -->
+<div class="work padding-tb" style="padding-top: 45px;">
+    <div class="container">
+        <div class="section__header text-center">
+            <h6>How We Work</h6>
+            <h2>Steps For Successful Business</h2>
+        </div>
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div class="work__item">
+                        <div class="work__inner">
+                            <div class="work__thumb">
+                                <img src="{% static 'img/work/icon/01.png' '%}" alt="work icon" />
+                                <span>01</span>
+                            </div>
+                            <div class="work__content text-center">
+                                <h4>Asset Management</h4>
+                                <p>The active managers chosen by {{ siteName|default:'siteName'|upper }} Holdings portfolio managers are among those rated
+                                    highly by our manager research teams. Our portfolio managers use the ESG ranks and
+                                    have access to profile and exposure data, as well as ESG and carbon footprint
+                                    metrics. Only actively managed investments with the highest overall rankings make
+                                    the cut. Additionally, ESG-related themes could be present in our products. The
+                                    various governance groups in the Investment Division carefully consider and approve
+                                    each manager appointment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div class="work__item">
+                        <div class="work__inner">
+                            <div class="work__thumb">
+                                <img src="{% static 'img/work/icon/02.png' %}" alt="work icon" />
+                                <span>02</span>
+                            </div>
+                            <div class="work__content text-center">
+                                <h4>risk management for sustainable development</h4>
+                                <p>On a continuous basis, portfolio managers look to identify and evaluate
+                                    sustainability risks that are financially significant. Utilizing available metrics
+                                    and in consultation with outside investment managers, potential risks are identified
+                                    (also referred to as subadvisors). One or more of the following steps may be taken
+                                    if a potential sustainability risk is identified: A thorough discussion with the
+                                    external investment manager who supports the holding; </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div class="work__item">
+                        <div class="work__inner">
+                            <div class="work__thumb">
+                                <img src="{% static 'img/work/icon/03.png' %}" alt="work icon" />
+                                <span>03</span>
+                            </div>
+                            <div class="work__content text-center">
+                                <h4>Strategic Planning.</h4>
+                                <p>Continually being developed and improved upon by our researchers are ESG-related
+                                    strategies like Decarbonization 2.0, impact investing, and ESG-themed solutions. Our
+                                    carbon-related products are created using unique carbon metrics and other
+                                    ESG-related metrics. We have created a proprietary Green Energy Ratio, which
+                                    quantifies the proportion of renewable energy that a utility generates (green
+                                    energy). By using technologies for climate change mitigation, this metric may help
+                                    identify some of the potential leaders in the climate transition..</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========Work Section Ends Here========== -->
+
+<!-- ==========Services Section Starts Here========== -->
+<div class="service service__three bg-title padding-tb">
+    <div class="container">
+        <div class="section__header text-center">
+            <h2>Investment Plans</h2>
+            <h6>We create value for {{ siteName|default:'siteName'|upper }} shareholders in the following ways</h6>
+        </div>
+        <div class="section__wrapper">
+            <div class="service__slider overflow-hidden">
+                <div class="swiper-wrapper">
+                    {% for i in investments %}
+                        <div class="swiper-slide">
+                            <div class="service__item">
+                                <div class="service__inner text-center">
+                                    <div class="service__content">
+                                        <div class="service__icon">
+                                            <img src="{% static 'img/outlook/service/icon/02.png' %}" alt="service icon" />
+                                        </div>
+                                        <span>{{ i.plan_name }}</span>
+                                        <h4><a href="{% url 'account:login' %}">Investment</a></h4>
+                                        <ul class="text-left mb-3">
+                                            <li><i class="fa-solid fa-circle-check"></i> Min Deposit ${{ i.min }}</li>
+                                            <li><i class="fa-solid fa-circle-check"></i> Max Deposit ${{ i.max }}</li>
+                                            <li><i class="fa-solid fa-circle-check"></i> {{ i.percent }}.00% After {{ i.duration }} Day(s)</li>
+                                            <li><i class="fa-solid fa-circle-check"></i> {{ i.ref_bonus }}.00% Referrals' Commission</li>
+                                            <li><i class="fa-solid fa-circle-check"></i> Trading Capital Returned</li>
+                                        </ul>
+                                        <a href="{% url 'account:login' %}" class="read-more">start investing</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="service__pagination"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- ==========Services Section Ends Here========== -->
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__one padding-tb bg-color">
+    <div class="container">
+        <div class="row g-5 flex-row-reverse align-items-end">
+            <div class="col-lg-6 col-12 ps-lg-4">
+                <div class="about__content">
+                    <h6>Direction & Goal</h6>
+
+                    <p>
+                        The goal of {{ siteName|default:'siteName'|upper }} Holdings is to satisfy the needs of our clients by providing outcome-oriented
+                        solutions that incorporate effective risk management strategies. Our five core
+                        competencies—capital markets research, portfolio construction, portfolio implementation, manager
+                        research, and factor exposures—combine to form this focus. Our company's foundation and
+                        long-term success are the people and values of {{ siteName|default:'siteName'|upper }} Holdings.
+                    </p>
+                    <div class="about__footer">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about__thumb">
+                    <div class="row g-4">
+                        <div class="thumb thumb--2 text-end">
+                            <img src="{% static 'img/investment/2a.jpg' %}" alt="About Image" />
+                            <div class="thumb--experience text-start">
+                                <img src="{% static 'img/about/icon/03.png' %}" alt="Icon" />
+                                <h5>We're ready to
+                                    <br />
+                                    assist you
+                                </h5>
+                            </div>
+                            <div class="floating-img">
+                                <img src="{% static 'img/investment/2b.jpg' %}" alt="About Image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+<!-- ==========specialtie Section Starts Here========== -->
+<div class="specialtie specialtie__two padding-tb">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                    <div class="specialtie__item">
+                        <div class="specialtie__inner">
+                            <div class="specialtie__thumb">
+                                <img src="{% static 'img/investment/3a.jpg' %}" alt="" class="w-100" />
+                            </div>
+                            <div class="specialtie__content">
+                                <h2>Clarity</h2>
+                                <p>
+                                    A crucial component of responsible investing is clarity. By being open and honest
+                                    about our responsible investing strategy and practices, we can show our dedication
+                                    to and advancement toward bringing about substantive change. It also enables us to
+                                    openly discuss the difficulties in creating a responsible investment service that is
+                                    suited to the various needs of our clients.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========specialtie Section Ends Here========== -->
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__two padding-tb">
+    <div class="container">
+        <div class="section__header text-center">
+            <h6>Administration and Regulations</h6>
+        </div>
+        <div class="section__wrapper">
+            <div class="row g-5 flex-row-reverse">
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="thumb thumb--2">
+                                <img src="{% static 'img/investment/4a.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <div class="pie"
+                                        data-pie='{ "index": 1, "percent": 80, "colorSlice": "#021738", "colorCircle": "#fff", "fontWeight": 700, "stroke": 6, "size": 70,"fontSize": "1.5rem","fontColor":"#021738" }'>
+                                    </div>
+                                    <h5>A true global
+                                        <br />
+                                        Reach
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/investment/4b.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__content">
+                        <p>
+                            Our board of directors is in charge of overseeing responsible investment, and they also set
+                            the tone for the company, support a positive culture, and, through our senior leadership
+                            team, promote appropriate behavior and teamwork throughout the company. The managing
+                            director (MD) of our investment business is in charge of daily responsibility for
+                            responsible investment, with assistance from the heads of our investment businesses.
+                        </p>
+
+                        <p>
+                            Our customers, regulators, and the general public have every right to expect us to be
+                            ethical investors. Our goal is to be a pioneer in ethical investing in our sector, not just
+                            to meet those expectations.
+
+                            One of our four pillars of being a responsible business, along with our people, society and
+                            communities, and environmental impact, is responsible investment.
+                        </p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    li {
+        color: #555555 !important;
+        padding-bottom: 5px;
+    }
+    li i {
+        color: #5E0623 !important;
+    }
+</style>
+<!-- ==========About Section Ends Here========== -->
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% extends 'dashboard/deposit/base.html' %}
+{% load static %}
+{% block name %}{{ plan.user.username|title }}{% endblock %}
+{% block amount %}{{ plan.sub_amount }}{% endblock %}
+{% block currency %}{{ plan.get_sub_currency_display }}{% endblock %}
+{% block plan %}{{ plan.plan.plan_name }}{% endblock %}
+{% block value %}{{ usdt }}{% endblock %}
+{% block qrcode %}{% static 'img/qrcode/usdt.png' %}{% endblock %}

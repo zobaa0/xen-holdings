@@ -1,0 +1,70 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+    <!-- TITLE -->
+    {% block title %}
+    {{ request.user.username|title }} | Withdraw
+    {% endblock title %}
+
+    <!-- HEADING -->
+    {% block heading %}
+        TRANSFER
+    {% endblock heading %}
+    
+    <!-- MAIN CONTENT -->
+    {% block content %}
+    <section class="summary dashb px-lg-5 px-3 py-3">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 stretch-card">
+                <div class="card bg-transparent">
+                    <div class="card-body">
+                        <!-- HANDLING ERRORS -->
+                        {% if form.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show pb-0" role="alert">
+                                <div id="form_errors" style="line-height: 1;">                                            
+                                    {% for key, value in form.errors.items  %}
+                                        <small>{{ value }}</small>
+                                    {% endfor %}                                                
+                                </div>                                        
+                                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endif %}
+                        <form method="post">{% csrf_token %}
+                            <div class="mb-3 form-group amt" style="">
+                                <label for="r_username" class="form-label text-light">Enter Receiver's Username: *</label>
+                                {{ form.username }}
+                            </div>
+                            <div class="mb-3 form-group amt" style="margin-top: 30px;">
+                                <label for="t_amount" class="form-label text-light">Enter Amount: *</label>
+                                {{ form.amount }}
+                            </div>
+                           <input type="submit" value="" class="d-none">
+                            <div class="draw" style="margin-top: 30px;">
+                                <button class="btn btn-sm btn-primary d-block" type="submit">Initiate Transfer</button>
+                            </div>                
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        
+    </style>
+    {% endblock content %}
+
+    {% block style %}
+        <style>
+            .alert {
+                border-radius: 12px !important;
+            }
+            small ul li {
+                list-style: square !important;
+                padding-bottom: 4px !important;
+            }
+            small ul {
+                padding-left: 10px !important;
+                padding-bottom: 10px !important;
+            }
+        </style>
+    {% endblock style %}

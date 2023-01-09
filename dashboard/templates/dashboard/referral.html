@@ -1,0 +1,65 @@
+{% extends 'dashboard/settings.html' %}
+{% load static %}
+
+    <!-- TITLE -->
+    {% block title %}
+    {{ request.user.username|title }} | Transactions
+    {% endblock title %}
+
+    <!-- HEADING -->
+    {% block heading %}
+        TRANSACTIONS
+    {% endblock heading %}
+    
+    <!-- MAIN CONTENT -->
+    {% block profile %}
+        <!-- TRANSACTIONS -->
+        <div class="summary col-md-8 offset-lg-1 pb-5 mb-lg-2 mb-lg-4 mt-n3 mt-md-0">
+            <div class="ps-md-3 ps-lg-0 mt-md-2 pb-md-0">
+                <p><strong style="color:rgb(10, 223, 165); font-size: 18px;">
+                    My Referrals
+                </strong> <br>
+                <small>
+                    Share your link with your friends and earn a percentage on their first deposit
+                </small>
+                </p>
+                <!-- TODO: DISPLAY THE REF CODE OF THE USER -->
+
+                <!-- Dark table with striped rows -->
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped">
+                        <thead class="tot-head">
+                            <tr>
+                            <th>S/N</th>
+                            <th>Referral</th>
+                            <th>Bonus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if not referrals %}
+                                <tr class="tot-row">
+                                    <td><em>No data to display at the moment.</em></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% else %}
+                                {% for i in referrals %}
+                                    <tr class="tot-row">
+                                        <td class="text-light">{{ forloop.counter }}.</td>
+                                        <td class="text-light">{{ i.user|title }}</td>
+                                        <td class="text-light">${{ i.bonus }}</td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                        </tbody>
+                    </table>
+
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center pt-3">
+                        {% include 'dashboard/includes/pagination.html' with page=referrals %}
+                    </div>
+                </div>  
+            </div>
+        </div>         
+
+    {% endblock profile %}        

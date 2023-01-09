@@ -1,0 +1,686 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ siteName|default:'siteName'|upper }} Holdings | Our Outlook
+{% endblock title %}
+
+{% block site__head %}
+style='font-weight: bold; color: #5E0623; font-size: 20px;'
+{% endblock %}
+
+{% block header %}
+   header__three 
+{% endblock header %}
+
+{% block content %}
+     <!-- ==========Page Header Section Starts Here========== -->
+     <div class="pageheader" style="background: url({% static 'img/outlook/bg/pageheader.jpg' %});">
+        <div class="container">
+            <div class="pageheader__content">
+                <h2>About Our Company</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'main:index' %}">Home | </a></li>
+                        <li class="px-2 active" aria-current="page" style="color: #5E0623;">About Us</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- ==========Page Header Section Ends Here========== -->
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about padding-tb">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 col-12">
+                    <div class="about__content">
+                        <h6>Who we are</h6>
+                        <h2>Welcome to {{ siteName|default:'siteName'|upper }} Holdings</h2>
+                        <p>
+                            {{ siteName|default:'siteName'|upper }} Holdings manages a number of fund strategies that invest across the risk/return
+                            spectrum on behest of a wide and varied and well-respected group of resource
+                            endowment, establishments, corporate and public pension plans, financial
+                            institutions, family offices, and sovereign entities.
+                        </p>
+                        <p>The secret to working with management teams of high-potential companies is giving
+                            them access to the ideal blend of operational expertise, specialized industry
+                            knowledge, and global perspectives.</p>
+                        <p>
+                            On the foundation of autonomous ownership, financial stability, a dedication to
+                            proactive, value-oriented management, a strong belief in the efficacy of fundamental
+                            research, a diversity of viewpoints, and teamwork, we have built our company to
+                            withstand times of volatility. Our culture places a strong emphasis on our fiduciary
+                            duty to our customers and Plan shareholders.
+
+                        </p>
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="thumb">
+                                    <img src="{% static 'img/outlook/1a.jpg' %}" alt="about" class="w-100" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-12 ">
+                                <div class="thumb">
+                                    <img src="{% static 'img/outlook/1b.jpg' %}" alt="about" class="w-100" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-12">
+                                <div class="thumb thumb--content">
+                                    <h4>Corporate
+                                        <br />
+                                        Ethics Program
+                                    </h4>
+                                    <img src="{% static 'img/outlook/about/icon/03.png' %}" alt="about icon" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 10px; margin-bottom: 5px;">
+                    The broadness and depth of our research, the strategies we provide, and the clients we serve
+                    have all been globalized since our inception. Our conviction that deep fundamental analysis,
+                    a long-term investment outlook, and a quantitative discipline can produce appealing
+                    long-term investment outcomes for our clients has not changed.
+
+                    When high-priced investment products flooded the marketplace - and our founders believed
+                    clients deserved a new kind of investment firm.
+                    <br />
+
+
+                    {{ siteName|default:'siteName'|upper }} Holdings was founded with the goal of putting clients' interests first through a focused
+                    set of investment strategies designed to preserve and enhance their investment capital over
+                    the long term and offered at reasonable and transparent fees.<br />
+                    These principles still guide our firm more than 14 years later.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+
+
+    <!-- ==========Feature Section Starts Here========== -->
+    <div class="feature feature__three feature__innerpage padding-tb">
+        <div class="container">
+            <div class="feature__area">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="feature__item">
+                            <div class="feature__inner">
+                                <div class="feature__thumb">
+                                    <img src="{% static 'img/outlook/feature/icon/08.png' %}" alt="feature icon" />
+                                </div>
+                                <div class="feature__content">
+                                    <h4>Environment</h4>
+                                    <p>The portfolio of Our Buyout Funds can be described as "asset light," and
+                                        for many businesses, electricity use is the most important environmental
+                                        indicator.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="feature__item">
+                            <div class="feature__inner">
+                                <div class="feature__thumb">
+                                    <img src="{% static 'img/outlook/feature/icon/09.png' %}" alt="feature icon" />
+                                </div>
+                                <div class="feature__content">
+                                    <h4>Social</h4>
+                                    <p>To support the wellbeing of the workforce, processes and practices have
+                                        been put in place across the portfolio.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="feature__item">
+                            <div class="feature__inner">
+                                <div class="feature__thumb">
+                                    <img src="{% static 'img/outlook/feature/icon/10.png' %}" alt="feature icon" />
+                                </div>
+                                <div class="feature__content">
+                                    <h4>Governance</h4>
+                                    <p>Effective corporate management is built on good governance and an ethics
+                                        code that governs our business activities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ==========Feature Section Ends Here========== -->
+
+    <!-- ==========specialtie Section Starts Here========== -->
+    <div class="specialtie specialtie__two padding-tb">
+        <div class="container">
+            <div class="section__wrapper">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12">
+                        <div class="specialtie__item">
+                            <div class="specialtie__inner">
+                                <div class="specialtie__thumb">
+                                    <img src="{% static 'img/outlook/2b.jpg' %}" alt="" class="w-100" />
+                                </div>
+                                <div class="specialtie__content">
+                                    <h3>Asset Management</h3>
+
+                                    <p>
+                                        With more than $27 billion in assets under management in the areas of
+                                        real estate, infrastructure, renewable energy, private equity, and
+                                        credit, {{ siteName|default:'siteName'|upper }} Asset Management is a prominent global alternative asset
+                                        manager. In order to benefit our clients and shareholders, we want to
+                                        produce enticing long-term risk-adjusted returns.
+
+                                    </p>
+                                    <p>
+                                        For institutional and retail clients, we manage a variety of public and
+                                        private investment products and services. By investing alongside our
+                                        clients, we align our interests with theirs and generate income from
+                                        asset management.
+                                    </p>
+                                    <p>With roughly $13 billion invested in our listed affiliates, {{ siteName|default:'siteName'|upper }} Property
+                                        Partners, {{ siteName|default:'siteName'|upper }} Infrastructure Partners, {{ siteName|default:'siteName'|upper }} Renewable Partners, and {{ siteName|default:'siteName'|upper }}
+                                        Business Partners, we have an incredibly solid balance sheet. Few
+                                        managers are able to invest in sizeable, elite businesses and assets
+                                        across geographies and asset classes as we can thanks to our access to
+                                        large amounts of capital.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========specialtie Section Ends Here========== -->
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about about__one padding-tb bg-color">
+        <div class="container">
+            <div class="row g-5 flex-row-reverse align-items-end">
+                <div class="col-lg-6 col-12 ps-lg-4">
+                    <div class="about__content">
+                        <h6>A TRUE GLOBAL REACH</h6>
+
+                        <p>
+                            On behalf of a diverse and well-respected group of endowments, foundations, public
+                            and corporate pension plans, financial institutions, family offices, and sovereign
+                            entities, {{ siteName|default:'siteName'|upper }} holdings manages a number of fund strategies that invest across the
+                            risk/return spectrum.
+                        </p>
+                        <p>
+                            The secret to working with management teams of high-potential companies is giving
+                            them access to the ideal blend of operational expertise, specialized industry
+                            knowledge, and global perspectives.
+                        </p>
+                        <p>We strive to motivate groups of people to develop innovative business ideas. We
+                            achieve this, for example, by using a sector- and sub-sector-based approach. It
+                            enhances our comprehension of the trends that are significant to management teams.
+                            It assists in locating fresh opportunities and controlling potential negative risks.
+                            This improves {{ siteName|default:'siteName'|upper }} Holdings as a partner.</p>
+                        <div class="about__footer">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="thumb thumb--2 text-end">
+                                <img src="{% static 'img/outlook/3a.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <img src="{% static 'img/outlook/about/icon/03.png' %}" alt="Icon" />
+                                    <h5>We're ready to
+                                        <br />
+                                        assist you
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/outlook/3b.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+
+
+    <!-- ==========Services Section Starts Here========== -->
+    <div class="service service__three bg-title padding-tb">
+        <div class="container">
+            <div class="section__header text-center">
+                <h2>Value Creation</h2>
+                <h6>What makes us stand out among the crowd</h6>
+            </div>
+            <div class="section__wrapper">
+                <div class="service__slider overflow-hidden">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="service__item">
+                                <div class="service__inner text-center">
+                                    <div class="service__thumb">
+                                        <a href="#">
+                                            <img src="{% static 'img/outlook/4a.jpg' %}" alt="service" />
+                                        </a>
+                                    </div>
+                                    <div class="service__content">
+                                        <div class="service__icon">
+                                            <img src="{% static 'img/outlook/service/icon/01.png' %}" alt="service icon" />
+                                        </div>
+                                        <span>Assets</span>
+                                        <h4><a href="{% url 'main:investment' %}">Asset Manager</a></h4>
+                                        <p>We can scale up our operations and increase our financial returns
+                                            through base management fees and performance-based income by
+                                            investing both our own money and that of our investors.</p>
+                                        <a href="{% url 'main:investment' %}" class="read-more">more details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service__item">
+                                <div class="service__inner text-center">
+                                    <div class="service__thumb">
+                                        <a href="#">
+                                            <img src="{% static 'img/outlook/4b.jpg' %}" alt="service" />
+                                        </a>
+                                    </div>
+                                    <div class="service__content">
+                                        <div class="service__icon">
+                                            <img src="{% static 'img/outlook/service/icon/02.png' %}" alt="service icon" />
+                                        </div>
+                                        <span>Capital Allocator</span>
+                                        <h4><a href="{% url 'main:investment' %}">Investor & Capital allocator</a></h4>
+                                        <p>We work to invest at attractive valuations, especially in
+                                            value-oriented circumstances that offer chances for superior
+                                            valuation gains and cash flow returns, or by monetizing assets or
+                                            businesses at the right times to realize value</p>
+                                        <a href="{% url 'main:investment' %}" class="read-more">more details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="service__item">
+                                <div class="service__inner text-center">
+                                    <div class="service__thumb">
+                                        <a href="#">
+                                            <img src="{% static 'img/outlook/4c.jpg' %}" alt="service" />
+                                        </a>
+                                    </div>
+                                    <div class="service__content">
+                                        <div class="service__icon">
+                                            <img src="{% static 'img/outlook/service/icon/03.png' %}" alt="service icon" />
+                                        </div>
+                                        <span>Owner Operator</span>
+                                        <h4><a href="{% url 'main:investment' %}">Owner Operator</a></h4>
+                                        <p>Through our operating expertise, development capabilities, and
+                                            efficient financing, we constantly strive to boost the value of the
+                                            assets or businesses within our marketing companies as well as the
+                                            cash flows they produce.</p>
+                                        <a href="{% url 'main:investment' %}" class="read-more">more details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service__pagination"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ==========Services Section Ends Here========== -->
+
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about about__two padding-tb">
+        <div class="container">
+            <div class="section__header text-center">
+                <h3>Transformation</h3>
+                <h6>transformational changes</h6>
+            </div>
+            <div class="section__wrapper">
+                <div class="row g-5 flex-row-reverse">
+                    <div class="col-lg-6 col-12">
+                        <div class="about__thumb">
+                            <div class="row g-4">
+                                <div class="thumb thumb--2">
+                                    <img src="{% static 'img/outlook/5a.jpg' %}" alt="About Image" />
+                                    <div class="thumb--experience text-start">
+                                        <div class="pie"
+                                            data-pie='{ "index": 1, "percent": 80, "colorSlice": "#021738", "colorCircle": "#fff", "fontWeight": 700, "stroke": 6, "size": 70,"fontSize": "1.5rem","fontColor":"#021738" }'>
+                                        </div>
+                                        <h5>A true global
+                                            <br />
+                                            Reach
+                                        </h5>
+                                    </div>
+                                    <div class="floating-img">
+                                        <img src="{% static 'img/outlook/5b.jpg' %}" alt="About Image" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="about__content">
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <p>
+                                By encouraging transformational changes in our portfolio companies, we hope to
+                                add value. We contribute to the creation of upcoming market leaders through
+                                operational expertise and digital acceleration. We are excellent partners in
+                                value creation because we maintain a complete alignment with management teams..
+                            </p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about about__one padding-tb bg-color">
+        <div class="container">
+            <div class="row g-5 flex-row-reverse align-items-end">
+                <div class="col-lg-6 col-12 ps-lg-4">
+                    <div class="about__content">
+                        <h2>Growth</h2>
+                        <h6>Understanding Business growth trajectory</h6>
+                        <p>
+                            Finding outstanding businesses is only the beginning of the journey. The key is to
+                            understand that every business is different and has its own special set of
+                            opportunities and challenges. Together with management teams, strategies for
+                            accelerating growth are developed, giving them access to internal resources at {{ siteName|default:'siteName'|upper }}
+                            Holdings..
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="thumb thumb--2 text-end">
+                                <img src="{% static 'img/outlook/6a.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <img src="{% static 'img/outlook/about/icon/03.png' %}" alt="Icon" />
+                                    <h5>We're ready to
+                                        <br />
+                                        assist you
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/outlook/6b.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+
+
+
+
+    <!-- ==========specialtie Section Starts Here========== -->
+    <div class="specialtie specialtie__two padding-tb">
+        <div class="container">
+            <div class="section__wrapper">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12">
+                        <div class="specialtie__item">
+                            <div class="specialtie__inner">
+                                <div class="specialtie__thumb">
+                                    <img src="{% static 'img/outlook/7.jpg' %}" alt="" class="w-100" />
+                                </div>
+                                <div class="specialtie__content">
+                                    <h3>Public Markets</h3>
+
+                                    <p>
+                                        We have made investments in public markets for institutions,
+                                        governments, and people all over the world for almost 13 years. With a
+                                        $10 trillion investable universe, we apply our elevated, value-oriented
+                                        investment approach to real estate, infrastructure, energy
+                                        infrastructure, real asset debt, and multi-strategy real asset
+                                        solutions. As of April 30, 2021, we had over $436 million in assets
+                                        under management.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========specialtie Section Ends Here========== -->
+
+
+
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about about__two padding-tb">
+        <div class="container">
+            <div class="section__header text-center">
+                <h3>Team</h3>
+                <h6>Our Dynamic Team</h6>
+            </div>
+            <div class="section__wrapper">
+                <div class="row g-5 flex-row-reverse">
+                    <div class="col-lg-6 col-12">
+                        <div class="about__thumb">
+                            <div class="row g-lg-4">
+                                <div class="thumb thumb--2">
+                                    <img src="{% static 'img/outlook/8a.jpg' %}" alt="About Image" />
+                                    <div class="thumb--experience text-start">
+                                        <div class="pie"
+                                            data-pie='{ "index": 1, "percent": 80, "colorSlice": "#021738", "colorCircle": "#fff", "fontWeight": 700, "stroke": 6, "size": 70,"fontSize": "1.5rem","fontColor":"#021738" }'>
+                                        </div>
+                                        <h5>A true global
+                                            <br />
+                                            Reach
+                                        </h5>
+                                    </div>
+                                    <div class="floating-img">
+                                        <img src="{% static 'img/outlook/8b.jpg' %}" alt="About Image" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="about__content">
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <p>
+                                We actively sought out individuals who are amiable, perceptive, and imaginative.
+                                We are aware that partnerships built on respect and trust work best. We took the
+                                time to solidify our values because we want our stakeholders to understand what
+                                we stand for, the qualities we seek in candidates, and the interactions they can
+                                anticipate.
+                            </p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+
+
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about about__one padding-tb bg-color">
+        <div class="container">
+            <div class="row g-5 flex-row-reverse align-items-end">
+                <div class="col-lg-6 col-12 ps-lg-4">
+                    <div class="about__content">
+                        <h2>Innovation</h2>
+                        <h6>{{ siteName|default:'siteName'|upper }} Innovators</h6>
+                        <p>
+                            At our core, we are innovators and engineers who transform ideas into deeds. Through
+                            thoughtful communication across our network, we personalize our operations, growth,
+                            and technology strategies. We have experience with enterprise software and a proven
+                            track record in operations, growth, and innovation.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="thumb thumb--2 text-end">
+                                <img src="{% static 'img/outlook/9a.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <img src="{% static 'img/outlook/about/icon/03.png' %}" alt="Icon" />
+                                    <h5>We're ready to
+                                        <br />
+                                        assist you
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/outlook/9b.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+
+
+
+
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about about__two padding-tb">
+        <div class="container">
+            <div class="section__header text-center">
+                <h3>Specialized</h3>
+                <h6>Our Speciality</h6>
+            </div>
+            <div class="section__wrapper">
+                <div class="row g-5 flex-row-reverse">
+                    <div class="col-lg-6 col-12">
+                        <div class="about__thumb">
+                            <div class="row g-4">
+                                <div class="thumb thumb--2">
+                                    <img src="{% static 'img/outlook/10a.jpg' %}" alt="About Image" />
+                                    <div class="thumb--experience text-start">
+                                        <div class="pie"
+                                            data-pie='{ "index": 1, "percent": 80, "colorSlice": "#021738", "colorCircle": "#fff", "fontWeight": 700, "stroke": 6, "size": 70,"fontSize": "1.5rem","fontColor":"#021738" }'>
+                                        </div>
+                                        <h5>A true global
+                                            <br />
+                                            Reach
+                                        </h5>
+                                    </div>
+                                    <div class="floating-img">
+                                        <img src="{% static 'img/outlook/10b.jpg' %}" alt="About Image" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="about__content">
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <p>
+                                {{ siteName|default:'siteName'|upper }} Holdings is an expert in financial services, a vibrant and varied sector
+                                that contributes significantly to the U.S. economy. Financial services is ripe
+                                with opportunity but frequently ignored because of the complexity of its
+                                business models and its regulatory, tax, and accounting requirements. We are
+                                well-positioned to maneuver the potentials of this highly specialised space
+                                thanks to the knowledge we've acquired over the past 15 years in financial
+                                services.
+                            </p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+
+
+
+    <!-- ==========About Section Starts Here========== -->
+    <div class="about about__one padding-tb bg-color">
+        <div class="container">
+            <div class="row g-5 flex-row-reverse align-items-end">
+                <div class="col-lg-6 col-12 ps-lg-4">
+                    <div class="about__content">
+                        <h2>Experience</h2>
+                        <h6>{{ siteName|default:'siteName'|upper }} Experienced Team</h6>
+                        <p>
+                            Our advisory board has, on average, been working at {{ siteName|default:'siteName'|upper }} for 13 years, has been in
+                            the financial services industry for over 12 years, and has held senior operational
+                            positions during that time. The team has extensive experience investing in and
+                            managing financial institutions, having completed over 4300 investments since 2010
+                            through its allied investment funds.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="thumb thumb--2 text-end">
+                                <img src="{% static 'img/outlook/11b.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <img src="{% static 'img/outlook/about/icon/03.png' %}" alt="Icon" />
+                                    <h5>We're ready to
+                                        <br />
+                                        assist you
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/outlook/11a.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========About Section Ends Here========== -->
+{% endblock content %}
+    

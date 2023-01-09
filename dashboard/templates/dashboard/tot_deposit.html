@@ -1,0 +1,180 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+<!-- TITLE -->
+{% block title %}
+{{ request.user.username|title }} | Transactions
+{% endblock title %}
+
+<!-- HEADING -->
+{% block heading %}
+TRANSACTIONS
+{% endblock heading %}
+
+<!-- MAIN CONTENT -->
+{% block content %}
+<!-- TRANSACTIONS -->
+<section class="summary dashbb__tot px-lg-5 px-3 py-3">
+    <div class="row">
+        <div class="col-md-12">
+            <p><strong style="color:rgb(10, 223, 165); font-size: 18px;">Total Investments</strong></p>
+            <!-- Dark table with striped rows -->
+            <div class="table-responsive">
+                <table class="table table-dark table-striped">
+                    <thead style="background: rgb(47, 100, 143);">
+                        <tr>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in sub %}
+                        <tr class="tot-row">
+                            <td style="line-height: 1.3; color: #fff;">
+                                {{ i.type }} <br>
+                                <span class="badge bg-success shadow-success"><em>{{ i.status }}</em></span>
+                            </td>
+                            <td style="padding-top: 20px; color: #fff;">${{ i.sub_amount }}</td>
+                            <td id="view-td" class="view" data-bs-toggle="modal" data-bs-target="#modalId{{ i.pk }}">
+                                <a style="text-decoration: none;" href="#dep{{ i.pk }}"
+                                    aria-controls="modal{{ i.pk }}">View</a>
+                            </td>
+                        </tr>
+                        <!-- MODAL POPUP -->
+                        <div class="modal fade" id="modalId{{ i.pk }}" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content" style="background: #141822;">
+                                    <div class="modal-header">
+                                        <p class="d-none currency-view">{{ i.sub_currency }}</p>
+                                        <p class="modal-title">
+                                            <span style="color: rgb(39, 179, 252);">{{ i.type }} |</span>
+                                            $<span class="price">{{ i.sub_amount }} </span> |
+                                            <span style="color: rgb(10, 223, 165);" class="newPrice"></span>
+                                        </p>
+                                        <button type="button" class="btn-close bg-light" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body pb-1">
+                                        <div id="" class="mb-2 px-3 text-light"
+                                            style="background: #30333c; border-radius: 10px;">
+                                            <p class="py-2 mb-1">
+                                                Sender
+                                                <span style="float: right; color: rgb(39, 179, 252);">
+                                                    {{ i.user|title }}
+                                                </span>
+                                                <hr>
+                                            </p>
+                                            <p class="mb-2">
+                                                Plan
+                                                <span style="float: right; color: rgb(39, 179, 252);">
+                                                    {{ i.plan.plan_name }}
+                                                </span>
+                                                <hr>
+                                            </p>
+                                            <p class="mb-2">
+                                                Duration
+                                                <span style="float: right; color: rgb(39, 179, 252);">
+                                                    <b>{{ i.plan.percent }}%</b> daily for <b>{{ i.plan.duration }}</b>
+                                                    days
+                                                </span>
+                                                <hr>
+                                            </p>
+                                            <p class="mb-2">
+                                                Status
+                                                <span style="float: right;" class="badge bg-success shadow-success"><em>
+                                                        {{ i.status }}
+                                                    </em></span>
+                                                <hr>
+                                            </p>
+                                            <p class="mb-2">
+                                                Initiated on
+                                                <span style="float: right; color: rgb(39, 179, 252);">
+                                                    {{ i.initiated_on }}
+                                                </span>
+                                                <hr>
+                                            </p>
+                                            <p class="py-2 mt-0 pt-0">
+                                                Verified on
+                                                <span style="float: right;color: rgb(39, 179, 252);">
+                                                    {{ i.verified_on|default:'Not verified' }}
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer modal-close">
+                                        <button type="button" class="btn btn-outline-primary btn-sm"
+                                            data-bs-dismiss="modal">Go Back</button>
+                                    </div>
+                                </div>
+                                <!-- #30333c -->
+                                <!-- #141822 -->
+                            </div>
+                        </div>
+                        {% empty %}
+                        <tr class="tot-row">
+                            <td><em>No transaction to display at the moment.</em></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="d-flex justify-content-center pt-3">
+            {% include 'dashboard/includes/pagination.html' with page=sub %}
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+
+{% block script %}
+<script type="text/javascript">
+    const url_key = 'https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=BTC,ETH,USDT';
+
+    const viewButtons = document.querySelectorAll(".view");
+
+    for (let i=0; i<viewButtons.length; i++) {
+        viewButtons[i].addEventListener('click', function () {
+            fetch(url_key)
+                .then(response => response.json())
+
+                .then(data => {
+                    // Select the price using querySelector
+                    const usdPriceElements = document.querySelectorAll('.price');
+                    // Get the text content of the price
+                    const usdPrice = usdPriceElements[i].textContent;
+                    // Placeholder to hold the converted price
+                    let price;
+                    // Select the currency using querySelector
+                    let currency = document.querySelectorAll('.currency-view');
+
+                    if (currency[i].innerText === 'Btc') {
+                        const btcPrice = (usdPrice * data.BTC).toFixed(4);
+                        price = `${btcPrice} BTC`;
+
+                    } else if (currency[i].innerText === 'Eth') {
+                        const ethPrice = (usdPrice * data.ETH).toFixed(4);
+                        price = `${ethPrice} ETH`;
+
+                    } else if (currency[i].innerText === 'Trc20') {
+                        const usdtPrice = (usdPrice * data.USDT).toFixed(2);
+                        price = `${usdtPrice} USDT`;
+                    }
+
+                    const newPrice = document.querySelectorAll('.newPrice');
+                    newPrice[i].textContent = price;
+                })
+
+                .catch(error => {
+                    console.log(error);
+                });
+        })
+
+    }
+</script>
+{% endblock script %}

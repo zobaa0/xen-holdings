@@ -1,0 +1,478 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ siteName|default:'siteName'|upper }} Holdings | Financial Strategies
+{% endblock title %}
+
+{% block header %}
+header__three
+{% endblock header %}
+
+{% block site__head %}
+style='font-weight: bold; color: #5E0623; font-size: 20px;'
+{% endblock %}
+
+{% block content %}
+<!-- ==========Page Header Section Starts Here========== -->
+<div class="pageheader" style="background: url({% static 'img/outlook/bg/pageheader.jpg' %});">
+    <div class="container">
+        <div class="pageheader__content">
+            <h2>Financial Strategies</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home | </a></li>
+                    <li class="px-2 active" aria-current="page" style="color: #5E0623;">Financial Strategies</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- ==========Page Header Section Ends Here========== -->
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__one padding-tb bg-color">
+    <div class="container">
+        <div class="row g-5 flex-row-reverse align-items-end">
+            <div class="col-lg-6 col-12 ps-lg-4">
+                <div class="about__content">
+                    <h6>A TRUE GLOBAL REACH</h6>
+
+                    <p>
+                        Since 2008, {{ siteName|default:'siteName'|upper }} Holdings has offered its clients value-added investment solutions. Despite the
+                        fact that since our inception, our investment strategies, clients, and assets have all increased
+                        significantly, there are a few guiding principles that have remained constant. These are what we
+                        refer to as our guiding principles:<br />
+                        1. Always act in the clients' best interests<br />
+                        2. Conduct yourself in a moral and legal manner.<br />
+                        3. Be fiercely competitive to succeed.<br />
+                        4. We base our investment strategies on evidence-based research<br />
+                        5. Place a focus on financial stability<br />
+                        6. Provide chances for our employees to contribute to both our success and their own success.
+                    </p>
+
+                    <p>Following these guidelines has been beneficial for us, and we think it's the secret to generating
+                        long-term client satisfaction and, as a result, to our success as a firm. These principles guide
+                        our approach to responsible investing, from the investment strategies we recommend to clients to
+                        the way our company operates.</p>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about__thumb">
+                    <div class="row g-4">
+                        <div class="thumb thumb--2 text-end">
+                            <img src="{% static 'img/strategy/1a.jpg' %}" alt="About Image" />
+                            <div class="thumb--experience text-start">
+                                <img src="{% static 'img/about/icon/03.png' %}" alt="Icon" />
+                                <h5>We're ready to
+                                    <br />
+                                    assist you
+                                </h5>
+                            </div>
+                            <div class="floating-img">
+                                <img src="{% static 'img/strategy/1b.jpg' %}" alt="About Image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+
+
+<!-- ==========specialtie Section Starts Here========== -->
+<div class="specialtie specialtie__two padding-tb">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                    <div class="specialtie__item">
+                        <div class="specialtie__inner">
+                            <div class="specialtie__thumb">
+                                <img src="{% static 'img/strategy/2.jpg' %}" class="w-100" />
+                            </div>
+                            <div class="specialtie__content">
+                                <h2>team-based methodology</h2>
+                                <p>
+
+                                    We employ a team-based approach when implementing responsible investment for our
+                                    investment strategies, keeping with our team-based approach to all investment
+                                    processes. Members of our Strategy Investment Research, Investment Analytics & Data,
+                                    Investment Stewardship, and Portfolio Management teams put in a lot of work to
+                                    conduct responsible investments. Our Head of Responsible Investment works with these
+                                    various groups to organize ESG activities. With a dotted line to one of our Co-CEOs,
+                                    the Head of Responsible Investment reports to our Global Head of Portfolio
+                                    Management.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========specialtie Section Ends Here========== -->
+
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__three padding-tb">
+    <div class="container">
+        <div class="row g-5 flex-row-reverse">
+            <div class="col-lg-6 col-12 ps-lg-4">
+                <div class="about__content">
+                    <h2>Investment philosophy and principles</h2>
+                    <p>Our investment strategy is grounded in the idea that prices on liquid capital markets accurately
+                        reflect all information that is available to the general public. Information on a portfolio
+                        company's strategy, financial and nonfinancial performance, risk, capital structure, social and
+                        environmental impact, and corporate governance are just a few examples of what is covered. As a
+                        result, we think that the prices of securities reflect the overall risk and return expectations
+                        of investors and that prices are driven toward fair value by competition among market
+                        participants.</p>
+                    <p>
+                        Despite the fact that we think market prices do reflect a company's ESG policies, we also think
+                        that ESG standards can be used to reduce risk and/or boost investment returns for our clients.
+                        Particularly, we think that:<br />
+
+                        ESG factors should be incorporated into portfolios to manage risks. Additionally, investment
+                        managers should carefully integrate ESG where clients want investment solutions that also aim to
+                        achieve quantifiable ESG outcomes so that the loss of diversification brought on by ESG
+                        considerations does not significantly affect expected returns.</p>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about__thumb">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="thumb">
+                                <img src="{% static 'img/strategy/3a.jpg' %}" alt="about" class="w-100" />
+                                <div class="thumb--experience text-start">
+                                    <img src="{% static 'img/about/icon/03.png' %}" alt="Icon">
+                                    <h5>We're ready to
+                                        <br>
+                                        assist you
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="thumb">
+                                <img src="{% static 'img/strategy/3b.jpg' %}" alt="about" class="w-100" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="thumb">
+                                <img src="{% static 'img/strategy/3c.jpg' %}" alt="about" class="w-100" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+<!-- ==========specialtie Section Starts Here========== -->
+<div class="specialtie specialtie__two padding-tb">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                    <div class="specialtie__item">
+                        <div class="specialtie__inner">
+                            <div class="specialtie__thumb">
+                                <img src="{% static 'img/strategy/4.jpg' %}" alt="rajibraj" class="w-100" />
+                            </div>
+                            <div class="specialtie__content">
+                                <h2>ESG investment processes and strategies</h2>
+                                <p>
+                                    By incorporating ESG factors broadly into all of our investment strategies and by
+                                    providing specialized equity and fixed income strategies that aim to achieve
+                                    particular ESG-related outcomes, we reflect the aforementioned ESG beliefs.<br />
+
+                                    ESG factors are incorporated into our investment processes for risk management
+                                    purposes. We begin by creating our portfolios using the following principles of
+                                    investing:<br />
+                                    1) Targeted return drivers backed by solid research;<br />
+                                    2) Diversify among issuers, industries, and nations as appropriate;<br />
+                                    3) Daily price information should be taken into account, and portfolios should be
+                                    systematically implemented by carefully balancing expected returns, costs, and
+                                    risks.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========specialtie Section Ends Here========== -->
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__two padding-tb">
+    <div class="container">
+        <div class="section__header text-center">
+            <h2>Current Ownership</h2>
+        </div>
+        <div class="section__wrapper">
+            <div class="row g-5 flex-row-reverse">
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4">
+                            <div class="thumb thumb--2">
+                                <img src="{% static 'img/strategy/5a.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <div class="pie"
+                                        data-pie='{ "index": 1, "percent": 80, "colorSlice": "#021738", "colorCircle": "#fff", "fontWeight": 700, "stroke": 6, "size": 70,"fontSize": "1.5rem","fontColor":"#021738" }'>
+                                    </div>
+                                    <h5>80% Training
+                                        <br />
+                                        Course
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/strategy/5b.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__content">
+                        <p>
+
+                            Once we buy a security, our job as a client's investment advisor is not done. We believe
+                            that better governance practices may lead to higher realized returns through higher future
+                            cash flows to shareholders or a lower discount rate used by the market, which is why our
+                            Investment Stewardship team promotes best-in-class governance practices, including oversight
+                            of material ESG-related risks. <br />Engagement, proxy voting, and involvement in trade
+                            shows and organizations are all part of our stewardship efforts.<br /> For more details on
+                            our active ownership activities, please refer to our Investment Stewardship Statement and
+                            Annual Stewardship Report.</p>
+                        <ul>
+                            <li class="w-100">
+                                <div class="icon">
+                                    <img src="{% static 'img/about/icon/01.png' %}" alt="about icon" />
+                                </div>
+                                <div class="text">
+                                    <h6>Targeted ESG strategies</h6>
+                                    <p>We provide targeted sustainability and social strategies that incorporate ESG and
+                                        also add more emphasis on ESG criteria by aiming for particular ESG outcomes.
+                                        ESG factors are incorporated into these strategies' widely diversified,
+                                        value-added systematic investment solutions through cutting-edge processes. Our
+                                        track record managing sustainable and socially-screened strategies, which spans
+                                        more than a decade.</p>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+
+
+<!-- ==========specialtie Section Starts Here========== -->
+<div class="specialtie specialtie__two padding-tb">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                    <div class="specialtie__item">
+                        <div class="specialtie__inner">
+                            <div class="specialtie__thumb">
+                                <img src="{% static 'img/strategy/6.jpg' %}" class="w-100" />
+                            </div>
+                            <div class="specialtie__content">
+                                <h2>Contribution to the industry</h2>
+                                <p>
+                                    Along with the investments we make on our clients' behalf, we also work to enhance
+                                    the operation of the investment sector. <br />Among other things, these efforts
+                                    include collaborating with regulators to enhance market mechanisms, promoting
+                                    transparency, as well as defending our clients' interests all throughout the
+                                    investment process. In an effort to contribute to the improvement of market
+                                    mechanisms, we have frequently provided regulators with input. <br />For instance,
+                                    we vehemently opposed the proposed practice when the U.S. Securities and Exchange
+                                    Commission ("Commission") requested feedback on a pilot program for wider bid-ask
+                                    spreads for small-cap issuers.<br /> The Commission ceased the proposed changes
+                                    after the pilot program because it realized that smaller bid-ask spreads ultimately
+                                    benefited investors.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========specialtie Section Ends Here========== -->
+
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__one padding-tb bg-color">
+    <div class="container">
+        <div class="row g-5 flex-row-reverse align-items-end">
+            <div class="col-lg-6 col-12 ps-lg-4">
+                <div class="about__content">
+                    <h6>Local Community and Industry Involvement</h6>
+
+                    <p>
+                        We actively look for opportunities to make a difference by collaborating with regional
+                        organizations as well as organizations from across the industry as part of our commitment to the
+                        communities that we serve and in which we operate.
+
+
+                    </p>
+                    <p>
+                        Our employees took part in numerous local community activities in 2019 with groups like the Red
+                        Cross, Junior Achievement, Second Harvest, and the Salvation Army, as well as food banks like
+                        Second Harvest and Central Texas. Over 1,400 hours were donated by Our employees to these
+                        causes, helping to better their local neighborhoods.
+                    </p>
+                    <p>We also kept increasing our participation in and support of a number of industry programs that
+                        target underrepresented talent outside of local organizations. This might be done through
+                        particular universities, like the Women in Investing Conference at Cornell or the Women in
+                        Investment Management at Chicago Booth. The Robert S. Toigo Foundation, for example, focuses on
+                        the professional development and increased leadership of underrepresented talent in the
+                        financial services sector. Since 2013, we have collaborated with the Toigo Foundation. Along
+                        with taking part in Toigo's spring Catapult event every year, {{ siteName|default:'siteName'|upper }} has also hosted Toigo's
+                        flagship annual leadership conference, the Fall Apex, in 2014, 2016, 2019, and is currently in
+                        discussions to host in 2021.</p>
+                    <div class="about__footer">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="about__thumb">
+                    <div class="row g-4">
+                        <div class="thumb thumb--2 text-end">
+                            <img src="{% static 'img/strategy/7a.jpg' %}" alt="About Image" />
+                            <div class="thumb--experience text-start">
+                                <img src="{% static 'img/about/icon/03.png' %}" alt="Icon" />
+                                <h5>We're ready to
+                                    <br />
+                                    assist you
+                                </h5>
+                            </div>
+                            <div class="floating-img">
+                                <img src="{% static 'img/strategy/7b.jpg' %}" alt="About Image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+
+<!-- ==========specialtie Section Starts Here========== -->
+<div class="specialtie specialtie__two padding-tb">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                    <div class="specialtie__item">
+                        <div class="specialtie__inner">
+                            <div class="specialtie__thumb">
+                                <img src="{% static 'img/strategy/8.jpg' %}" alt="rajibraj" class="w-100" />
+                            </div>
+                            <div class="specialtie__content">
+                                <h2>2020 – an unprecedented year</h2>
+                                <p>
+                                    The necessity of an integrated strategy for building strong and robust businesses
+                                    has been highlighted by the recent unprecedented circumstances, supporting the
+                                    investment case for ESG. The importance of resiliency and long-term sustainable
+                                    strategies has been demonstrated by the current crisis. As the pandemic spread, our
+                                    team reacted quickly, and a cross-portfolio Covid-19 taskforce was formed in early
+                                    March 2020 to provide a forum for portfolio company executives to exchange
+                                    experiences and best practices.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========specialtie Section Ends Here========== -->
+
+
+
+<!-- ==========About Section Starts Here========== -->
+<div class="about about__two padding-tb">
+    <div class="container">
+        <div class="section__header text-center">
+            <h2>Facilities and Operations</h2>
+        </div>
+        <div class="section__wrapper">
+            <div class="row g-5 flex-row-reverse">
+                <div class="col-lg-6 col-12">
+                    <div class="about__thumb">
+                        <div class="row g-4 px-3">
+                            <div class="thumb thumb--2">
+                                <img src="{% static 'img/strategy/9a.jpg' %}" alt="About Image" />
+                                <div class="thumb--experience text-start">
+                                    <div class="pie"
+                                        data-pie='{ "index": 1, "percent": 80, "colorSlice": "#021738", "colorCircle": "#fff", "fontWeight": 700, "stroke": 6, "size": 70,"fontSize": "1.5rem","fontColor":"#021738" }'>
+                                    </div>
+                                    <h5>80% Training
+                                        <br />
+                                        Course
+                                    </h5>
+                                </div>
+                                <div class="floating-img">
+                                    <img src="{% static 'img/strategy/9b.jpg' %}" alt="About Image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="about__content">
+                        <p>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            We work to reduce the negative effects of our business operations on the environment by
+                            developing offices, plans, and procedures. {{ siteName|default:'siteName'|upper }}'s corporate office in Charlotte and our
+                            Charlotte office are where the majority of our employees are based. The only locations that
+                            {{ siteName|default:'siteName'|upper }} owns are these two offices, and they have both won prizes for outstanding
+                            sustainability. Austin Energy Green Building awarded {{ siteName|default:'siteName'|upper }}'s Delware headquarters a three-star
+                            rating, and our Charlotte office received a LEED Gold certification.
+                        </p>
+                        <p>
+
+                            We have been examining ways to lessen our carbon footprint as part of our ongoing efforts to
+                            strengthen our sustainability procedures. In March 2020, we also publicly endorsed the
+                            Taskforce for Climate-Related Financial Disclosures (TCFD).
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========About Section Ends Here========== -->
+{% endblock content %}

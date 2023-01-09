@@ -1,0 +1,72 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block style %}
+    {% static 'account/css/main.css' %}
+{% endblock style %}
+
+{% block title %}
+{{ siteName|default:'siteName'|upper }} Holdings | VerifyOTP
+{% endblock title %}
+
+{% block header %}
+header__three
+{% endblock header %}
+
+{% block content %}
+<!-- LOGIN PAGE -->
+<section class="account px-lg-5 px-1 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="background: #fff; border: none;">
+                    <div class="card-body" style="box-shadow: rgb(1 1 75) 0px 3px 10px 0px;">
+                      
+                        <h4 class="text-xl-start">
+                            Two-Factor Authentication
+                        </h4>
+                        <small>{% include 'dashboard/includes/messaging.html' %}</small>
+
+                        <p class="text-xl-start text-dark mb-0 pb-0" style="font-size: 14px;">
+                            Open the two-step verification app on your mobile device to get your verification code.
+                        </p>
+                        <br>
+
+                        <!-- HANDLING ERRORS -->
+                        <form action="{% url 'account:validate_OTP' %}" method="post" class="mb-3"
+                            style="letter-spacing: 1px;">
+                            {% csrf_token %}
+                            <div class="mb-3 form-group">
+                                <input type="text" name="auth_code" id="auth_code" placeholder="Authentication Code"
+                                    class="form-control form-control-md">
+                            </div>
+                            <!-- <br> -->
+                            <input type="submit" value="" class="d-none">
+                            <input type="hidden" name="next" value="{{ request.GET.next }}">
+                            <div class="form-group mt-4">
+                                <button class="btn btn-md btn-primary w-100 account__confirm">
+                                    Authenticate
+                                </button>
+                            </div>
+                        </form>
+                        <p class="text-center">
+                            <a href="{% url 'account:login' %}"
+                                class="text-dark ml-0 pl-0"
+                                style="text-decoration: underline; font-size: 15px;">Back to basic login</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    input {
+        color: #000 !important;
+    }
+
+    .alert {
+        border-radius: 12px !important;
+    }
+</style>
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            <div class="alert-title alert alert-success alert-dismissible fade show pb-1" role="alert">
+                <button class="alert-body btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div style="">
+                    <span>{{ message|safe|escape }}</span>
+                </div> 
+            </div>
+
+        {% elif message.tags == 'error' %}
+            <div class="alert-title alert alert-danger alert-dismissible fade show pb-1" role="alert">
+                <button class="alert-body btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div style="">
+                    <span>{{ message|safe }}</span>
+                </div> 
+            </div>
+        {% elif message.tags == 'info' %}
+            <div class="alert-title alert alert-info alert-dismissible fade show pb-1" role="alert">
+                <button class="alert-body btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div style="">
+                    <span>{{ message|safe|escape }}</span>
+                </div> 
+            </div>
+        {% elif message.tags == 'warning' %}
+            <div class="alert alert-title alert-warning alert-dismissible fade show pb-1" role="alert">
+                <button class="alert-body btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div style="">
+                    <span>{{ message|safe|escape }}</span>
+                </div> 
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+<style>
+    .alert-title {
+        padding-top: 5px !important;
+    }
+    .alert-body {
+        padding-top: 2px !important;
+    }
+    /* .alert-danger {
+        --si-alert-color: #dd1313 !important;
+    } */
+</style>
