@@ -8,6 +8,16 @@ def get_site_details(request):
     siteURL = current_site.domain
     protocol = 'https' if request.is_secure() else 'http'
     
+    address = ''
+    siteName = ''
+    year = ''
+    phone = ''
+    email = ''
+    founder = ''
+    btc = ''
+    eth = ''
+    usdt = ''
+
     for i in Site.objects.all():
         address = i.address
         siteName = i.name
