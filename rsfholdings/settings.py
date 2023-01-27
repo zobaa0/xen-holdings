@@ -12,10 +12,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+MODE=config("MODE", default="dev")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -24,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p5a3^v93=8+!-7&ng&tl_#)cac-jb0jxtry=m7__&ki2$xz&(x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -38,10 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # local apps
     'main.apps.MainConfig',
     'account.apps.AccountConfig',
     'dashboard.apps.DashboardConfig',
-    'celery',
+    
+    # third-party apps
     'django_celery_beat',
 ]
 
@@ -86,17 +91,27 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# development
+if config('MODE')=='dev':
+    DATABASES = {
+     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE':'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'crypto',
-#         'USER': 'buchii',
-#         'PASSWORD': 'buchii',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
+# production
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE':'django.db.backends.postgresql_psycopg2',
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST'),
+            'PORT': '',
+        }
+    }
 
 
 # Password validation
@@ -155,10 +170,10 @@ AUTHENTICATION_BACKENDS = ['account.backends.EmailBackend']
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Email Server Configuration
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'sugarlabbs@gmail.com'
-EMAIL_HOST_PASSWORD = 'uauygjslpjdgsohr'
-EMAIL_PORT = '587'
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_USE_TLS = True
 
 # SESSION CONFIG
@@ -168,7 +183,11 @@ SESSION_SAVE_EVERY_REQUEST = True
 SESSION_COOKIE_SECURE = True
 
 # REDIRECT ALL CONNECTIONS TO HTTPS
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
 
 # SECURE CRF
 CSRF_COOKIE_SECURE = True
+
+# CELERY CONFIG
+CELERY_BROKER_URL = config('CELERY_BROKER_URL')
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
