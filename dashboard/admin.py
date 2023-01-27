@@ -6,11 +6,11 @@ from .models import Plan, Subscription, Withdrawal, Wallet, MinimumAmount, Trans
 class PlanAdmin(admin.ModelAdmin):
     '''Admin View for Plan'''
 
-    list_display = ('plan_name', 'min', 'max', 'percent', 'duration')
+    list_display = ('plan_name', 'min', 'max', 'percent', 'ref_bonus', 'duration')
     fieldsets = (
         ('INVESTMENT PLAN', {
             'fields': (
-                'plan_name', 'min', 'max', 'percent', 'duration'
+                'plan_name', 'min', 'max', 'percent', 'ref_bonus' 'duration'
             ),
         }),
     )

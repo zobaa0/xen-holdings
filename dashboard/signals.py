@@ -50,22 +50,22 @@ def verify_transfer(sender, instance, *args, **kwargs):
         message.send(fail_silently=True)
 
 
-@receiver(post_save, sender=Subscription)
-def confirm_plan_closure(sender, instance, **kwargs):
-    user = instance.user
-    if instance.status == 'Expired':
-        # TODO: send confirmation email to user
-        context = ({
-            'user': user.username,
-            'amount': instance.sub_amount,
-            'plan': instance.plan.plan_name,
-            'percent': instance.plan.percent,
-            'duration': instance.plan.duration
-        })
-        html_version = './dashboard/mails/completed_dep.html'
-        html_message = render_to_string(html_version, context)
-        subject = 'siteName - Investment Completed'
-        message = EmailMessage(subject, html_message,
-                               settings.EMAIL_HOST_USER, [user.email])
-        message.content_subtype = 'html'
-        message.send(fail_silently=True)
+# @receiver(post_save, sender=Subscription)
+# def confirm_plan_closure(sender, instance, **kwargs):
+#     user = instance.user
+#     if instance.status == 'Expired':
+#         # TODO: send confirmation email to user
+#         context = ({
+#             'user': user.username,
+#             'amount': instance.sub_amount,
+#             'plan': instance.plan.plan_name,
+#             'percent': instance.plan.percent,
+#             'duration': instance.plan.duration
+#         })
+#         html_version = './dashboard/mails/completed_dep.html'
+#         html_message = render_to_string(html_version, context)
+#         subject = 'siteName - Investment Completed'
+#         message = EmailMessage(subject, html_message,
+#                                settings.EMAIL_HOST_USER, [user.email])
+#         message.content_subtype = 'html'
+#         message.send(fail_silently=True)

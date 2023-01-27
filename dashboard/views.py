@@ -30,7 +30,8 @@ UserModel = get_user_model()
 @login_required(login_url='account:login')
 def dashboard(request):
     user = UserModel.objects.get(pk=request.user.pk)
-    last_deposit = Subscription.objects.filter(user=user, active=True).last()
+    last_deposit = Subscription.objects.filter(
+        user=user, active=True).last()
     last_withdrawal = Withdrawal.objects.filter(
         user=user, status="Confirmed").last()
     deposit = Subscription.objects.all()
@@ -156,7 +157,8 @@ def deposit(request):
                     to=['okonkwogodspower@yahoo.com'],
                 )
                 message1.send(fail_silently=True)
-                messages.success(request, ("Transaction Successful. Your investment package will be activated shortly!"))
+                messages.success(
+                    request, ("Transaction Successful. Your investment package will be activated shortly!"))
                 return redirect('dashboard:tot_investment')
             else:
                 subscribe.save()

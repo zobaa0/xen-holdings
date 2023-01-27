@@ -5,7 +5,7 @@ from django.db import models
 
 class Site(models.Model):
     name = models.CharField(
-        max_length=30, verbose_name="Site name", null=True, blank=True)
+        max_length=30, verbose_name="Site name", default='siteName')
     website = models.CharField(
         max_length=30, verbose_name="Website URL", null=True, blank=True)
     address = models.CharField(

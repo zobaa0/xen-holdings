@@ -9,6 +9,9 @@ runtime
 __pycache__
 .env
 db.sqlite3
-media/
+# media/
 .vscode/
+*.dir
+*.bak
+*.dat
 # foodmenu_backup.sql

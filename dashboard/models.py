@@ -131,52 +131,6 @@ class Wallet(models.Model):
     def __str__(self):
         return f"{self.get_type_display()}"
 
-    def clean(self):
-        """WALLET ADDRESS CUSTOM VALIDATION"""
-        if not self and not self.required:
-            return None
-
-        # BITCOIN WALLET
-        if self.type == "Btc":
-            if not self.address.startswith("1") and not self.address.startswith('3') and not self.address.startswith('bc1'):
-                raise ValidationError(
-                    {'address': _(f"Invalid Bitcoin address.")})
-            if "\n" in self.address:
-                raise ValidationError(
-                    {'address': _(f"Multiple lines in the Bitcoin address.")})
-            if " " in self.address:
-                raise ValidationError(
-                    {'address': _(f"Spaces in the Bitcoin address.")})
-            if re.match(r"[a-zA-Z1-9]{26,35}$", self.address) is None:
-                raise ValidationError(
-                    {'address': _(f"Invalid Bitcoin address.")})
-        # ETHEREUM WALLET
-        elif self.type == "Eth":
-            if not self.address.startswith('0x'):
-                raise ValidationError(
-                    {'address': _(f"Invalid Ethereum address.")})
-            if len(self.address) != 42:
-                raise ValidationError(
-                    {'address': _(f"Invalid Ethereum address.")})
-            if "\n" in self.address:
-                raise ValidationError(
-                    {'address': _(f"Multiple lines in the Ethereum address.")})
-            if " " in self.address:
-                raise ValidationError(
-                    {'address': _(f"Spaces in the Ethereum address.")})
-        # USDT WALLET
-        else:
-            if not self.address.startswith("T"):
-                raise ValidationError({'address': _(f"Invalid USDT address.")})
-            if len(self.address) != 34:
-                raise ValidationError({'address': _(f"Invalid USDT address.")})
-            if "\n" in self.address:
-                raise ValidationError(
-                    {'address': _(f"Multiple lines in the USDT address.")})
-            if " " in self.address:
-                raise ValidationError(
-                    {'address': _(f"Spaces in the USDT address.")})
-
 
 class MinimumAmount(models.Model):
     """Model definition for MinimumAmount."""

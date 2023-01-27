@@ -9,7 +9,7 @@ from django.contrib.auth.admin import UserAdmin
 class CustomUserAdmin(UserAdmin):
     '''Admin View for CustomUser'''
 
-    list_display = ('email', 'first_name', 'last_name', 'balance', 'profit')
+    list_display = ('username', 'first_name', 'last_name', 'balance', 'profit')
     list_filter = ('username', 'email')
     readonly_fields = ('otp_base32', 'otp_auth_url', 'date_joined',
                        'last_login', 'del_account_due_date', 'country', 

@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p5a3^v93=8+!-7&ng&tl_#)cac-jb0jxtry=m7__&ki2$xz&(x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'account.apps.AccountAdminConfig',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -80,23 +80,23 @@ WSGI_APPLICATION = 'rsfholdings.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME': 'crypto',
-        'USER': 'buchii',
-        'PASSWORD': 'buchii',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE':'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'crypto',
+#         'USER': 'buchii',
+#         'PASSWORD': 'buchii',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 # Password validation
@@ -133,11 +133,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -152,7 +152,7 @@ AUTH_USER_MODEL = 'account.CustomUser'
 
 AUTHENTICATION_BACKENDS = ['account.backends.EmailBackend']
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Email Server Configuration
 EMAIL_HOST = 'smtp.gmail.com'
@@ -165,3 +165,10 @@ EMAIL_USE_TLS = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 1200
 SESSION_SAVE_EVERY_REQUEST = True
+SESSION_COOKIE_SECURE = True
+
+# REDIRECT ALL CONNECTIONS TO HTTPS
+# SECURE_SSL_REDIRECT = True
+
+# SECURE CRF
+CSRF_COOKIE_SECURE = True

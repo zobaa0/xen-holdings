@@ -1,10 +1,14 @@
-from celery import shared_task
+from rsfholdings.celery import app
 from django.shortcuts import get_object_or_404
 from django.db.models import F
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+
+from rsfholdings import settings
 from datetime import date as dt
 
 
-@shared_task
+@app.task
 def activate_subscription(instance_id):
     """
     Task to automatically calculate and add daily profit
@@ -12,6 +16,9 @@ def activate_subscription(instance_id):
     """
     # GLOBAL IMPORTS
     from dashboard.models import Subscription, Plan
+
+    # CELERY IMPORTS
+    from django_celery_beat.models import PeriodicTask, IntervalSchedule
 
     # GET THE SUBSCRIPTION, PLAN % USER INSTANCE
     instance = get_object_or_404(Subscription, id=instance_id)
@@ -30,7 +37,7 @@ def activate_subscription(instance_id):
         # If the plan has not expired, create
         # a new periodic task
         if dt.today() == instance.verified_on:
-            # If the plan was activated today, 
+            # If the plan was activated today,
             # do nothing.
             pass
         elif dt.today() < instance.expires_at:
@@ -40,19 +47,36 @@ def activate_subscription(instance_id):
             user.profit = F('profit') + interest
             user.save()
         elif dt.today() == instance.expires_at:
-            # If the plan is expiring today, update user's 
+            # If the plan is expiring today, update user's
             # bal, profit & subscription amount.
             user.balance = F('balance') + interest + instance.sub_amount
             user.profit = F('profit') + interest
-            instance.status = 'Expired'
             user.save()
+            Subscription.objects.filter(pk=instance_id).update(
+                status='Expired',
+            )
+
+            # TODO: send confirmation email to user
+            context = ({
+                'user': user.username,
+                'amount': instance.sub_amount,
+                'plan': plan.plan_name,
+                'percent': plan.percent,
+                'duration': plan.duration
+            })
+            html_version = './dashboard/mails/completed_dep.html'
+            html_message = render_to_string(html_version, context)
+            subject = 'siteName - Investment Completed'
+            message = EmailMessage(subject, html_message,
+                                   settings.EMAIL_HOST_USER, [user.email])
+            message.content_subtype = 'html'
+            message.send(fail_silently=True)
+
         else:
             pass
 
     # Create a periodic task to run the activate_subscription
     # task everyday
-    from django_celery_beat.models import PeriodicTask, IntervalSchedule
-
     schedule, created = IntervalSchedule.objects.get_or_create(
         every=1,
         period=IntervalSchedule.DAYS,
